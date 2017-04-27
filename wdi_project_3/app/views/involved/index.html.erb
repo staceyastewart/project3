@@ -1,20 +1,12 @@
-INVOLVED
+INVOLVED PAGE
 <br>
 <br>
 <% @terms.each do |term| %>
   <a href="/involved/<%= term["name"] %>"><%= term["name"] %></a> <br>
 <% end %>
 
-<br><br><br><br><br>
-HELLO
-<br><br>
 
-<% @campaigns["data"].each do |campaign| %>
-  <%= campaign["title"] %><br>
-  <%= campaign["tagline"] %><br>
-  <%= primary_name(campaign) %>
-  <br><br>
-<% end %>
+
 
 
 

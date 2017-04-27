@@ -2,6 +2,9 @@ SHOW PAGE
 <br><br>
 <% @campaigns["data"].each do |campaign| %>
   <% if cause_events(campaign) %>
-      <%= cause_events(campaign) %> <br>
+      <%= campaign["title"] %> <br>
+      <%= campaign["tagline"] %><br>
+      <a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a>
+      <br><br>
   <%end %>
 <% end %>

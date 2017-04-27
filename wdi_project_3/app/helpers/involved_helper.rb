@@ -12,16 +12,19 @@ module InvolvedHelper
 
   def cause_events(obj)
     cause_name = primary_name(obj)
-    puts "XXXXX PRINTING BELOW  XXXXXXX"
-    puts cause_name
     id = params[:id].downcase
-    puts id
     if cause_name == id
       obj["title"]
-
     else
       #
     end
+  end
+
+  def render_url(obj)
+    title = obj["title"]
+    title2 = title.gsub(" ", "-")
+    url = "https://www.dosomething.org/us/campaigns/#{title2}"
+    return url
   end
 
 end
