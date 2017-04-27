@@ -2,7 +2,7 @@ INVOLVED
 <br>
 <br>
 <% @terms.each do |term| %>
-  <%= term["name"] %> <br>
+  <a href="/involved/<%= term["name"] %>"><%= term["name"] %></a> <br>
 <% end %>
 
 <br><br><br><br><br>
@@ -11,8 +11,7 @@ HELLO
 
 <% @campaigns["data"].each do |campaign| %>
   <%= campaign["title"] %><br>
-  <%= campaign["tagline"] %>
-  <br>
+  <%= campaign["tagline"] %><br>
   <%= primary_name(campaign) %>
   <br><br>
 <% end %>
