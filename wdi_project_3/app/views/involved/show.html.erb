@@ -1,0 +1,11 @@
+SHOW PAGE
+<br><br>
+<% @campaigns["data"].each do |campaign| %>
+<div class="events">
+  <% if cause_events(campaign) %>
+      <%= cause_events(campaign) %> <br>
+  <button>ADD</button>
+
+  <%end %>
+  </div>
+<% end %>
