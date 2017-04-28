@@ -4,15 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-<<<<<<< HEAD
-gem "httparty"
-=======
 
 gem "httparty"
 
-
-
->>>>>>> 7edc9dae8002b3d5e2e6a538e82d5318671fec9b
 gem 'devise'
 gem "simple_calendar", '~> 2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

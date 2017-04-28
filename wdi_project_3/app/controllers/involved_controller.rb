@@ -15,8 +15,10 @@ class InvolvedController < ApplicationController
 
   def show
     @user = current_user
-    @saved_favs = User.joins(:involved_favorites).where(:id => @user[:id])[0].involved_favorites
-
+    # saved_favs = User.joins(:involved_favorites).where(:id => @user[:id])[0].involved_favorites
+    # if saved_favs
+    #   @saved_favs = saved_favs
+    # end
     id = params[:id]
     @campaigns = HTTParty.get("https://www.dosomething.org/api/v1/campaigns?count=250")
 
