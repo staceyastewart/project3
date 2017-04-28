@@ -1,0 +1,7 @@
+
+<ul>
+<%@response["data"].each do |charity| %>
+<li><a href = "donate/<%=charity["charityName"]%>"><%= charity["charityName"] %></a></li>
+<%end%>
+</ul>
+
