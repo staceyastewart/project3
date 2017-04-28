@@ -1,1 +1,49 @@
 TEST
+
+
+HOME PAGE
+
+<div id="news">
+
+<% if user_signed_in? %>
+  Welcome, <strong><%= current_user.name %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<br>
+<br>
+
+<%= @rand_news["title"] %>
+<br>
+<%= @rand_news["description"] %>
+<br>
+<%= @rand_news["url"] %>
+<br>
+<br>
+
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src= <%=image_path("Draw-Something/MP4/Draw-Something.mp4") %>  type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src=<%=image_path("Draw-Something/WEBM/Draw-Something.webm") %> type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <!-- <img src=<%=image_path("Draw-Something/Snapshots/Draw-Something.jpg") %> alt=""> -->
+        </div>
+    </div>
+</div>
+
+
+<% end %>
+</div>
+
+
+
+<br>
+<br>
+
+
+
