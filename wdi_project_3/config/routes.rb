@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get '/donate/:state/:zipCode', to: 'donate#show'
-  get '/donate/:state/:zipcode/:charityName', to: 'donate#show2'
+  get '/donate/:state/:zipCode/:ein', to: 'donate#show2'
 end

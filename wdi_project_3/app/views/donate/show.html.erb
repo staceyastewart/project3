@@ -1,7 +1,12 @@
-
+<div id = body_show>
+<div id = "charities">
 <ul>
 <%@response["data"].each do |charity| %>
-<li><a href = "donate/<%=charity["charityName"]%>"><%= charity["charityName"] %></a></li>
+<div><a id='all' href = "<%=@zipCode%>/<%=charity["ein"]%>"><%= charity["charityName"] %></a></div><br>
 <%end%>
 </ul>
+</div>
+</div>
+
+
 

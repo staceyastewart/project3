@@ -1,2 +1,21 @@
-hello
-<%=@name%>
+<div id = "body_show2">
+<div id= "image_tree">
+<div id = "organization">
+<% @response.each do |charity| %>
+  <% if charity_show(charity) %>
+  <br>
+     <h2>Charity Name:</h2> <%=charity["charityName"] %><br>
+    <br>
+
+    <h2>City:</h2> <%= charity["city"]%>
+    <br>
+
+    <h2>Verify this organization's elegibility for
+    donations through the system, and make your
+    contribution today at:</h2> <h3><a href = "<%= charity["donationUrl"]%>"><%= charity["donationUrl"]%></a></h3>
+  <% end %>
+<%end%>
+</div>
+
+</div>
+</div>
