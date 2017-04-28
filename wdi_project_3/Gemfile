@@ -4,7 +4,15 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+<<<<<<< HEAD
 gem "httparty"
+=======
+
+gem "httparty"
+
+
+
+>>>>>>> 7edc9dae8002b3d5e2e6a538e82d5318671fec9b
 gem 'devise'
 gem "simple_calendar", '~> 2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,6 +22,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
+gem 'byebug', '~> 9.0', '>= 9.0.6'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -38,7 +47,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+
 end
 
 group :development do

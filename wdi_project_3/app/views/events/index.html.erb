@@ -1,1 +1,25 @@
 Events
+
+
+  <div class="container">
+
+   <h1>Locate, Create and Share your events here.</h1>
+   <p>List of events here</p>
+   <ul>
+     <li></li>
+   </ul>
+   <br>
+   <p>Create an event events here:</p>
+
+<%= form_for @rock, :method => :PUT do |c| %>
+
+    Name: <%= text_field_tag :name, @rock.name %><br>
+    Description: <%= text_field_tag :description, @rock.description %><br>
+    Image: <%= text_field_tag :image, @rock.image %><br>
+    <%= c.submit %>
+
+<% end %>
+
+<br>
+
+
