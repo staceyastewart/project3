@@ -21,8 +21,9 @@ def update
     content: params[:date],
     topic: params[:topic],
     price: params[:price],
-    type_of_event: params[:type_of_event],
+    type_of_event: params[:type_of_event]
     )
+end
 
   def destroy
     Event.find(params[:id]).destroy
