@@ -8,10 +8,10 @@ SHOW PAGE
 
 
       <%= form_for :favorites, url: "/involved" do |f| %>
-        <%= text_field_tag :title, campaign["title"] %><br>
-        <%= text_field_tag :url, render_url(campaign)%><br>
-        <%= text_field_tag :tagline, campaign["tagline"] %><br>
-        <%= text_field_tag :user_id, @user.id %><br>
+        <%= hidden_field_tag :title, campaign["title"] %><br>
+        <%= hidden_field_tag :url, render_url(campaign)%><br>
+        <%= hidden_field_tag :tagline, campaign["tagline"] %><br>
+        <%= hidden_field_tag :user_id, @user.id %><br>
         <%= f.submit %>
       <% end %>
 

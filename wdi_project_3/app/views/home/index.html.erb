@@ -3,9 +3,10 @@ TEST
 
 HOME PAGE
 
-<div id="news">
 
 <% if user_signed_in? %>
+<div id="news">
+
   Welcome, <strong><%= current_user.name %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -19,6 +20,11 @@ HOME PAGE
 <%= @rand_news["url"] %>
 <br>
 <br>
+
+</div>
+<div class= "favorites">
+favorites
+</div>
 
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
@@ -38,7 +44,6 @@ HOME PAGE
 
 
 <% end %>
-</div>
 
 
 
