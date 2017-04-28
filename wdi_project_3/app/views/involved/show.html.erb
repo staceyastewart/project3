@@ -1,5 +1,14 @@
 SHOW PAGE
 <br><br>
+
+<% @saved_favs.each do |x| %>
+
+  <%= x[:title] %>
+
+<% end %>
+<br><br>
+
+
 <% @campaigns["data"].each do |campaign| %>
   <% if cause_events(campaign) %>
       <%= campaign["title"] %> <br>
