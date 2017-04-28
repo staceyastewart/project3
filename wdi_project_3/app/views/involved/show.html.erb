@@ -5,7 +5,16 @@ SHOW PAGE
       <%= campaign["title"] %> <br>
       <%= campaign["tagline"] %><br>
       <a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a>
-      <button>ADD</button>
+
+
+      <%= form_for :favorites, url: "/involved" do |f| %>
+        <%= text_field_tag :title, campaign["title"] %><br>
+        <%= text_field_tag :url, render_url(campaign)%><br>
+        <%= text_field_tag :tagline, campaign["tagline"] %><br>
+        <%= text_field_tag :user_id, @user.id %><br>
+        <%= f.submit %>
+      <% end %>
+
       <br><br>
   <% end %>
 
