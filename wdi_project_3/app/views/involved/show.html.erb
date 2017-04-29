@@ -1,28 +1,32 @@
 SHOW PAGE
 
 <!-- THIS PAGE SHOULD NOT BE VIEWABLE TO ANYONE NOT LOGGED IN -->
-<br><br>
 
 
-<br><br>
-
+<br><br><br><br>
 
 <% @campaigns["data"].each do |campaign| %>
   <% if cause_events(campaign) %>
-      <%= campaign["title"] %> <br>
+      <strong><%= campaign["title"] %></strong> <br>
       <%= campaign["tagline"] %><br>
       <a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a>
+      <br>
+
+      <% user_favorites(campaign, @saved_favs) %>
+        <% if @fav_arr.include?("YES") %>
+          ADD DELETE FAV BUTTON HERE
+        <% else %>
+          <%= form_for :favorites, url: "/involved" do |f| %>
+            <%= text_field_tag :title, campaign["title"] %><br>
+            <%= text_field_tag :url, render_url(campaign)%><br>
+            <%= text_field_tag :tagline, campaign["tagline"] %><br>
+            <%= text_field_tag :user_id, @user.id %><br>
+            <%= f.submit %>
+          <% end %>
+        <% end %>
+
+<br><br><br>
 
 
-      <%= form_for :favorites, url: "/involved" do |f| %>
-        <%= text_field_tag :title, campaign["title"] %><br>
-        <%= text_field_tag :url, render_url(campaign)%><br>
-        <%= text_field_tag :tagline, campaign["tagline"] %><br>
-        <%= text_field_tag :user_id, @user.id %><br>
-        <%= f.submit %>
-      <% end %>
-
-      <br><br>
   <% end %>
-
 <% end %>

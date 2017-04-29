@@ -27,5 +27,21 @@ module InvolvedHelper
     return url
   end
 
+  def user_favorites(obj, arr)
+      arr.each do |favorite|
+        @fav_arr = []
+        if favorite[:title] == obj["title"]
+          @fav_arr = ["YES"]
+          return true
+          break
+        else
+          false
+        end
+      end
+  end
+
+
+
+
 
 end
