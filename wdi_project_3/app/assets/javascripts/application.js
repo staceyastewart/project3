@@ -10,7 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// = require jquery
+// = require jquery_ujs
+// = require turbolinks
+// = require moment
+// = require fullcalendar
+// = require_tree .
+
+
+
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+    $('#calendar').fullCalendar({
+
+      eventSources: ["home/show"]
+        // put your options and callbacks here
+    })
+
+
+
+});
