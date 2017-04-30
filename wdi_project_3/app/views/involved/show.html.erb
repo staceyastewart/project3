@@ -14,19 +14,22 @@ SHOW PAGE
 
       <% user_favorites(campaign, @saved_favs) %>
         <% if @fav_arr.include?("YES") %>
-          ADD DELETE FAV BUTTON HERE
+          **This is one of your favorite causes**
+          <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
+            <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
+            <%= f.submit "Delete From Favorites" %>
+          <% end %>
         <% else %>
           <%= form_for :favorites, url: "/involved" do |f| %>
-            <%= text_field_tag :title, campaign["title"] %><br>
-            <%= text_field_tag :url, render_url(campaign)%><br>
-            <%= text_field_tag :tagline, campaign["tagline"] %><br>
-            <%= text_field_tag :user_id, @user.id %><br>
-            <%= f.submit %>
+            <%= hidden_field_tag :title, campaign["title"] %>
+            <%= hidden_field_tag :url, render_url(campaign)%>
+            <%= hidden_field_tag :tagline, campaign["tagline"] %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= f.submit "Favorite This Cause" %>
           <% end %>
         <% end %>
 
 <br><br><br>
-
 
   <% end %>
 <% end %>

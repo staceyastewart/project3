@@ -11,6 +11,7 @@ class InvolvedController < ApplicationController
       tagline: params[:tagline],
       user_id: params[:user_id]
       )
+    redirect_to :back
   end
 
   def show
@@ -21,8 +22,13 @@ class InvolvedController < ApplicationController
     end
     id = params[:id]
     @campaigns = HTTParty.get("https://www.dosomething.org/api/v1/campaigns?count=250")
-
   end
+
+  def destroy
+    InvolvedFavorite.destroy(params[:delete_id])
+    redirect_to :back
+  end
+
 end
 
 

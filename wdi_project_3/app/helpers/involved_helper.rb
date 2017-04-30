@@ -1,4 +1,5 @@
 module InvolvedHelper
+
   def primary_name(obj)
     primary = obj["causes"]["primary"]
     secondary = obj["causes"]["secondary"]
@@ -28,20 +29,18 @@ module InvolvedHelper
   end
 
   def user_favorites(obj, arr)
+    index_of_fav = 0
       arr.each do |favorite|
         @fav_arr = []
         if favorite[:title] == obj["title"]
           @fav_arr = ["YES"]
-          return true
+          @index_of_fav = index_of_fav
           break
         else
           false
+          index_of_fav += 1
         end
       end
   end
-
-
-
-
 
 end
