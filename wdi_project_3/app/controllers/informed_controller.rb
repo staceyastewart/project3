@@ -1,10 +1,17 @@
 class InformedController < ApplicationController
 
   def index
+    client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
+    @links = client.links(all_categories).select {|l| l.is_self != true}
+    # @debug = true
   end
 
   def load_links
     client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
+    @links = client.links(category_from_id).select {|l| l.is_self != true}
+  end
+
+  def category_from_id
     if params[:id] == 'animals'
       reddit = 'ARLAW'
     elsif params[:id] == 'bullying'
@@ -26,7 +33,21 @@ class InformedController < ApplicationController
     else
       reddit = 'activism'
     end
-    @links = client.links(reddit).select {|l| l.is_self != true}
+  end
+
+  def all_categories
+    reddit = [
+     'ARLAW',
+     'bullying',
+     'Disasters',
+     'human_rights',
+     'education' ,
+     'enviroaction',
+     'globalhealth',
+     'poverty',
+     'BetterRelationships'
+     ]
+     reddit.join('+')
   end
 
   def show
