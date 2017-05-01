@@ -24,10 +24,38 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
     $('#calendar').fullCalendar({
 
-      eventSources: ["home/show"]
-        // put your options and callbacks here
-    })
+      eventSources: ["home/show"],
+      editable: true,
+      droppable: true,
+
+    eventDrop: function(event, delta, revertFunc) {
+
+        alert(event.title + " was dropped on " + event.start.format());
+
+        if (!confirm("Are you sure about this change?")) {
+            revertFunc();
+        }
+
+    }
+  })
+})
 
 
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
