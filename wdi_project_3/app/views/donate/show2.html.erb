@@ -24,14 +24,14 @@
       <% if @favorite_arr.include?("YES") %>
 
 
-          <%= form_for(:favorites, url: "/donate/#{@fav_char[@index_of_fav][:id]}", :html => {:method => 'delete'}) do |f| %>
+          <%= form_for(:favorites, url: "/favoritecharities/#{@fav_char[@index_of_fav][:id]}", :html => {:method => 'delete'}) do |f| %>
               <%= hidden_field_tag :delete_id, @fav_char[@index_of_fav][:id] %>
               <%= f.submit "Delete From Favorites" %>
           <% end %>
 
 
       <% else %>
-        <%= form_for :favorites, url: "/donate" do |f| %>
+        <%= form_for :favorites, url: "/favoritecharities" do |f| %>
           <%= hidden_field_tag :name, charity["charityName"] %>
           <%= hidden_field_tag :city, charity["city"] %>
           <%= hidden_field_tag :url, charity["donationUrl"] %>

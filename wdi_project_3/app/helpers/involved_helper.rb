@@ -1,5 +1,6 @@
 module InvolvedHelper
 
+
   def primary_name(obj)
     primary = obj["causes"]["primary"]
     secondary = obj["causes"]["secondary"]
