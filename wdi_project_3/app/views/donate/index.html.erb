@@ -1,9 +1,12 @@
+
+
 <div id="body_index">
 <h1>DONATE</h1>
 <h2>Search for oragnizations in your area</h2> <br>
 <button class="go_back">Go Back</button>
 <br>
 <br>
+
 <form id="donation_search" action="/donate" method="POST">
 
 
@@ -65,12 +68,17 @@
 
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
-
+</div>
 <img id="tree" src=http://i.imgur.com/abeHYUP.jpg>
 
-</div>
 
 
+<script>
+$('.go_back').click(function(){
+ window.history.back();
+});
+
+</script>
 
 
 

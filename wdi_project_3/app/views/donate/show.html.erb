@@ -1,14 +1,20 @@
 <div id = body_show>
-<button class="go_back">Go Back</button>
+
 <div id = "charities">
-<ul>
+
 <%@response["data"].each do |charity| %>
-<div><a id='all' href = "<%=@zipCode%>/<%=charity["ein"]%>"><%= charity["charityName"] %></a></div><br>
+<a id='all' href = "<%=@zipCode%>/<%=charity["ein"]%>"><%= charity["charityName"] %></a><br>
 <%end%>
-</ul>
-</div>
 
 </div>
+<button class="go-back">Go Back</button>
+</div>
 
+<script>
+$('.go-back').click(function(){
+ window.history.back();
+});
+
+</script>
 
 

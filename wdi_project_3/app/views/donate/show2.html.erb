@@ -55,13 +55,6 @@
 <!-- below will check if this record already exists for the user, if it does it will render a delete button, if it does not it will render the fav button -->
 
 
-
-
-
-
-
-
-
   <% end %>
 <%end%>
 </div>
@@ -70,5 +63,11 @@
 
 <br>
 <br>
-<button class="go_back">Go Back</button>
+<button class="go-back">Go Back</button>
 </div>
+<script>
+$('.go-back').click(function(){
+ window.history.back();
+});
+
+</script>
