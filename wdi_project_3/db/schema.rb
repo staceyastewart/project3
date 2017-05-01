@@ -10,16 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170501151715) do
+=======
+ActiveRecord::Schema.define(version: 20170430163733) do
+>>>>>>> ca52b3ff54c5a4a5fb70b6afa7d98c64ccad4d26
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "charities_tables", force: :cascade do |t|
     t.integer "charities_id"
     t.integer "user_id"
     t.index ["charities_id"], name: "index_charities_tables_on_charities_id", using: :btree
     t.index ["user_id"], name: "index_charities_tables_on_user_id", using: :btree
+=======
+  create_table "calendars", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "start"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text     "content"
+    t.string   "topic"
+    t.integer  "price"
+    t.string   "type_of_event"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_calendars_on_user_id", using: :btree
+>>>>>>> ca52b3ff54c5a4a5fb70b6afa7d98c64ccad4d26
   end
 
   create_table "events", force: :cascade do |t|
@@ -85,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "calendars", "users"
   add_foreign_key "events", "users"
   add_foreign_key "involved_favorites", "users"
 end
