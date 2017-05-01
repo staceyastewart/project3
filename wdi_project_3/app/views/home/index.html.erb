@@ -1,52 +1,62 @@
-<div id="head">
-
 <% if user_signed_in? %>
-  Welcome, <strong><%= current_user.name %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<br>
-<div id="news">
 
-<%= @rand_news["title"] %>
-<br>
-<%= @rand_news["description"] %>
-<br>
-<%= @rand_news["url"] %>
-</div>
-</div>
+<div class="sticker">
+  <div class="col-md-8 center"></div>
+    <h1 class="hello">Welcome, <strong><%= current_user.name %></strong>.</h1>
+      <img class="bg" src=<%=image_path("bg.jpg") %> alt="">
+  </div>
 
-<hr>
+
+
+<br>
+
+
+
+
+
+
 <div id="cal_container">
 
 <div id="calendar">
 </div>
 </div>
-<hr>
 
-Events you favorited:
-
-
-<div id="favs">
-
-<% @favorites.each do |fav| %>
+<left>
+<div class="card">
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+      <% @favorites.each do |fav| %>
   <%= fav["title"] %>
   <%= fav["url"] %>
 <% end %>
-</div>
-<hr>
-<div id="favs">
-
-<% @fav_charity.each do |fav| %>
+  </div>
+  <div class="col-xs-6 col-md-4">  <% @fav_charity.each do |fav| %>
   <%= fav["name"] %>
   <%= fav["city"] %>
   <%= fav["url"] %>
-<% end %>
+<% end %></div>
+  <div class="col-xs-6 col-md-4">  <% @fav_charity.each do |fav| %>
+  <%= fav["name"] %>
+  <%= fav["city"] %>
+  <%= fav["url"] %>
+<% end %></div>
+</div>
 </div>
 
+<!--
+  <div class="col-sm-4">
+<%= @rand_news["title"] %>
 <br>
+<%= @rand_news["description"] %>
 <br>
+<%= @rand_news["url"] %>
+  </div>
+
+
 </div>
-</div>
+ -->
+
+
 
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
@@ -59,7 +69,7 @@ Events you favorited:
             <source src=<%=image_path("Draw-Something/WEBM/Draw-Something.webm") %> type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
         <div class="poster hidden">
-            <!-- <img src=<%=image_path("Draw-Something/Snapshots/Draw-Something.jpg") %> alt=""> -->
+            <!-- <img src=<%=image_path("Draw-Something/Snapshots/Draw-Something.jpg") %> alt="">
         </div>
     </div>
 </div>

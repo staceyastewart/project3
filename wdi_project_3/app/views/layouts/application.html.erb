@@ -3,41 +3,59 @@
   <head>
     <title>WdiProject3</title>
     <%= csrf_meta_tags %>
+    <link href="bootstrap.css" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   </head>
 
   <body>
-
-
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-
-
-<p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "My Profile",  "/" %>
-  <%= link_to "Get Involved",  "/involved" %>
-  <%= link_to "Get Informed",  "/informed" %>
-  <%= link_to "Donate",  "/donate" %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#"></a><%= link_to "Get Involved",  "/involved" %></li>
+        <li><a href="#"></a><%= link_to "Get Informed",  "/informed" %></li>
+        <li><a href="#"></a><%= link_to "Donate",  "/donate" %></li>
+        <li><a href="#"></a> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+</li>
+      </ul>
+      <form class="navbar-form navbar-left">
+
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><%= link_to 'My Profile'%></span></a></li>
+        <li><a href="#"><%= link_to 'Edit profile', edit_user_registration_path%></a></li>
+        <li><a href="#"></a> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
-</p>
-
+<div class="container-fluid">
     <%= yield %>
+
+
+</div>
   </body>
+    <div class="panel-footer">Panel footer</div>
+</div>
 </html>
