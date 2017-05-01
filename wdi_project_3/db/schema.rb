@@ -62,5 +62,4 @@ ActiveRecord::Schema.define(version: 20170428183034) do
 
   add_foreign_key "events", "users"
   add_foreign_key "involved_favorites", "users"
-
 end
