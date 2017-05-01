@@ -36,6 +36,7 @@ class InformedController < ApplicationController
   end
 
   def all_categories
+    client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
     reddit = [
      'ARLAW',
      'bullying',
@@ -52,6 +53,24 @@ class InformedController < ApplicationController
 
   def show
     load_links
+  end
+
+  def create
+    InformedFavorite.create(
+      user_id: params[:user_id],
+      animals: params[:animals],
+      bullying: params[:bullying],
+      disasters: params[:disasters],
+      discrimination: params[:discrimination],
+      education: params[:education],
+      environment: params[:environment],
+      homelessness: params[:homelessness],
+      physical_health: params[:physical_health],
+      poverty: params[:poverty],
+      relationships: params[:relationships],
+      sex: params[:sex],
+      violence: params[:violence]
+      )
   end
 
 
