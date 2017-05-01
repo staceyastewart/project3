@@ -1,8 +1,10 @@
 <div id="body_index">
-DONATE
-
-
-<form action="/donate" method="POST">
+<h1>DONATE</h1>
+<h2>Search for oragnizations in your area</h2> <br>
+<button class="go_back">Go Back</button>
+<br>
+<br>
+<form id="donation_search" action="/donate" method="POST">
 
 
   State: <select name="state_name">
@@ -63,6 +65,7 @@ DONATE
 
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
+
 <img id="tree" src=http://i.imgur.com/abeHYUP.jpg>
 
 </div>

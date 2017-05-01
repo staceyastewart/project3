@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20170501151715) do
+=======
 ActiveRecord::Schema.define(version: 20170430163733) do
+>>>>>>> ca52b3ff54c5a4a5fb70b6afa7d98c64ccad4d26
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
+  create_table "charities_tables", force: :cascade do |t|
+    t.integer "charities_id"
+    t.integer "user_id"
+    t.index ["charities_id"], name: "index_charities_tables_on_charities_id", using: :btree
+    t.index ["user_id"], name: "index_charities_tables_on_user_id", using: :btree
+=======
   create_table "calendars", force: :cascade do |t|
     t.string   "title"
     t.datetime "start"
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170430163733) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_calendars_on_user_id", using: :btree
+>>>>>>> ca52b3ff54c5a4a5fb70b6afa7d98c64ccad4d26
   end
 
   create_table "events", force: :cascade do |t|
@@ -45,6 +57,16 @@ ActiveRecord::Schema.define(version: 20170430163733) do
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
+  create_table "favorite_charities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_favorite_charities_on_user_id", using: :btree
+  end
+
   create_table "involved_favorites", force: :cascade do |t|
     t.string   "title",      null: false
     t.string   "url",        null: false
@@ -53,6 +75,14 @@ ActiveRecord::Schema.define(version: 20170430163733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_involved_favorites_on_user_id", using: :btree
+  end
+
+  create_table "my_charities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
