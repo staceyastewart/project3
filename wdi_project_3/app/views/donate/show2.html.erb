@@ -40,7 +40,7 @@
       <% end %>
       <% end %>
   <% else %>
-    <%= form_for :favorites, url: "/donate" do |f| %>
+    <%= form_for :favorites, url: "/favoritecharities" do |f| %>
           <%= hidden_field_tag :name, charity["charityName"] %>
           <%= hidden_field_tag :city, charity["city"] %>
           <%= hidden_field_tag :url, charity["donationUrl"] %>
