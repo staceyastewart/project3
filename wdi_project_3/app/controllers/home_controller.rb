@@ -4,8 +4,9 @@ class HomeController < ApplicationController
     @rand_news= @news["articles"].sample
     @events = Event.all
     @calend = Calendar.all
-    @favorites = InvolvedFavorite.where(:user_id => current_user.id)
-
+    if current_user
+      @favorites = InvolvedFavorite.where(:user_id => current_user.id)
+    end
 
   end
 
