@@ -10,7 +10,52 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// = require jquery
+// = require jquery_ujs
+// = require turbolinks
+// = require moment
+// = require fullcalendar
+// = require_tree .
+
+
+
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+    $('#calendar').fullCalendar({
+
+      eventSources: ["home/show"],
+      editable: true,
+      droppable: true,
+
+    eventDrop: function(event, delta, revertFunc) {
+
+        alert(event.title + " was dropped on " + event.start.format());
+
+        if (!confirm("Are you sure about this change?")) {
+            revertFunc();
+        }
+
+    }
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

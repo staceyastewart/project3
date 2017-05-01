@@ -8,8 +8,15 @@ end
 gem "json"
 gem "httparty"
 gem 'devise'
+
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
+
 gem "simple_calendar", '~> 2.0'
 gem 'redditkit', :git => 'https://github.com/samsymons/RedditKit.rb'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
