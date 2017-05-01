@@ -12,4 +12,18 @@ module DonateHelper
 
   end
 
+  def is_fav(obj, arr)
+    index_of_fav = 0
+    arr.each do |fav|
+      @favorite_arr = []
+      if fav.name == obj["charityName"]
+        @favorite_arr = ["YES"]
+        @index_of_fav = index_of_fav
+        break
+      else
+        index_of_fav +=1
+      end
+    end
+  end
+
 end

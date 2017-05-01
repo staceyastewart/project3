@@ -13,9 +13,62 @@
     <h2>Verify this organization's elegibility for
     donations through the system, and make your
     contribution today at:</h2> <h3><a href = "<%= charity["donationUrl"]%>"><%= charity["donationUrl"]%></a></h3>
+
+
+
+
+
+
+  <% if @fav_char %>
+    <% is_fav(charity, @fav_char) %>
+      <% if @favorite_arr.include?("YES") %>
+
+
+          <%= form_for(:favorites, url: "/favoritecharities/#{@fav_char[@index_of_fav][:id]}", :html => {:method => 'delete'}) do |f| %>
+              <%= hidden_field_tag :delete_id, @fav_char[@index_of_fav][:id] %>
+              <%= f.submit "Delete From Favorites" %>
+          <% end %>
+
+
+      <% else %>
+        <%= form_for :favorites, url: "/favoritecharities" do |f| %>
+          <%= hidden_field_tag :name, charity["charityName"] %>
+          <%= hidden_field_tag :city, charity["city"] %>
+          <%= hidden_field_tag :url, charity["donationUrl"] %>
+          <%= hidden_field_tag :user_id, @user.id %>
+        <%= f.submit %>
+      <% end %>
+      <% end %>
+  <% else %>
+    <%= form_for :favorites, url: "/donate" do |f| %>
+          <%= hidden_field_tag :name, charity["charityName"] %>
+          <%= hidden_field_tag :city, charity["city"] %>
+          <%= hidden_field_tag :url, charity["donationUrl"] %>
+          <%= hidden_field_tag :user_id, @user.id %>
+        <%= f.submit %>
+  <% end %>
+
+
+
+<% end %>
+
+<!-- below will check if this record already exists for the user, if it does it will render a delete button, if it does not it will render the fav button -->
+
+
+
+
+
+
+
+
+
   <% end %>
 <%end%>
 </div>
 
 </div>
+
+<br>
+<br>
+<button class="go_back">Go Back</button>
 </div>

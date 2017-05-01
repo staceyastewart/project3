@@ -1,0 +1,2 @@
+module FavoritecharitiesHelper
+end
