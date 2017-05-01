@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :events
   has_many :involved_favorites
+  has_many :favorite_charities
 end
