@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170501151715) do
 
   # These are extensions that must be enabled in order to support this database
@@ -45,6 +46,26 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
+  create_table "informed_favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "animals"
+    t.boolean  "bullying"
+    t.boolean  "disasters"
+    t.boolean  "discrimination"
+    t.boolean  "education"
+    t.boolean  "environment"
+    t.boolean  "homelessness"
+    t.boolean  "mental_health"
+    t.boolean  "physical_health"
+    t.boolean  "poverty"
+    t.boolean  "relationships"
+    t.boolean  "sex"
+    t.boolean  "violence"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_informed_favorites_on_user_id", using: :btree
+  end
+    
   create_table "favorite_charities", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "city",       null: false
@@ -87,6 +108,7 @@ ActiveRecord::Schema.define(version: 20170501151715) do
 
   add_foreign_key "calendars", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "informed_favorites", "users"
   add_foreign_key "favorite_charities", "users"
   add_foreign_key "involved_favorites", "users"
 end

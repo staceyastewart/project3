@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  animals: false
+  bullying: false
+  disasters: false
+  discrimination: false
+  education: false
+  environment: 
+  homelessness: false
+  mental: 
+  mental_healt: false
+  physical_health: false
+  poverty: false
+  relationships: false
+  sex: false
+  violence: false
+
+two:
+  user: two
+  animals: false
+  bullying: false
+  disasters: false
+  discrimination: false
+  education: false
+  environment: 
+  homelessness: false
+  mental: 
+  mental_healt: false
+  physical_health: false
+  poverty: false
+  relationships: false
+  sex: false
+  violence: false
