@@ -1,26 +1,25 @@
-Events
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
 
+</head>
+  <body>
+   <h1> Locate, Create and Share your events here. </h1>
+    <p>List of events here</p>
+      <% @event.each do |x| %>
+        <ul>
+          <li>
+            <a href="/events/<%= x['id'] %>">Title: <%= x['title'] %></a>
+          </li>
+        </ul>
+        <br>
 
-  <div class="container">
+      <% end %>
+<h1>Create and Event:</h1>
+<a href="/events/new" title="">Create an event</a>
 
-   <h1>Locate, Create and Share your events here.</h1>
-   <p>List of events here</p>
-   <ul>
-     <li></li>
-   </ul>
-   <br>
-   <p>Create an event events here:</p>
-   </div>
-
-<%= form_for @rock, :method => :PUT do |c| %>
-
-    Name: <%= text_field_tag :name, @rock.name %><br>
-    Description: <%= text_field_tag :description, @rock.description %><br>
-    Image: <%= text_field_tag :image, @rock.image %><br>
-    <%= c.submit %>
-
-<% end %>
-
-<br>
-
-
+  </body>
+</html>

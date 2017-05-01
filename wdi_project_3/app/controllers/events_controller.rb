@@ -3,32 +3,55 @@ class EventsController < ApplicationController
     @event = Event.all
   end
 
+
+ # def new
+ #  @event = Event.new
+ # end
+
+
+  def create
+   @event = Event.create(
+    title: params[:title],
+    date: params[:date],
+    start_time: params[:start_time],
+    end_time: params[:end_time],
+    content: params[:content],
+    topic: params[:topic],
+    price: params[:price],
+    type_of_event: params[:type_of_event],
+    user_id: params[:user_id]
+    )
+    # @user = User.find_by(params[:id])
+  redirect_to "/events/"
+  end
+
  def show
   @event = Event.find_by(id: params[:id])
  end
 
  def edit
   @event = Event.find(params[:id])
-end
+ end
 
-def update
+ def update
   @event = Event.find(params[:id])
   @event.update(
     title: params[:title],
     date: params[:date],
-    start_time: params[:date],
-    end_time: params[:date],
-    content: params[:date],
+    start_time: params[:start_time],
+    end_time: params[:end_time],
+    content: params[:content],
     topic: params[:topic],
     price: params[:price],
     type_of_event: params[:type_of_event]
     )
-end
+  redirect_to event_path(@event)
+ end
 
-  def destroy
+ def destroy
     Event.find(params[:id]).destroy
     redirect_to "/events"
-  end
+ end
 
 end
 

@@ -1,7 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <h1>Event</h1>
+  <ul>
+    <li>Title: <%= @event.title %></li>
+    <li>Date: <%= @event.date %></li>
+    <li>Start Time: <%= @event.start_time %></li>
+    <li>End Time: <%= @event.end_time %></li>
+    <li>Content: <%= @event.content %></li>
+    <li>Topic: <%= @event.topic %></li>
+    <li>Price: <%= @event.price %></li>
+    <li>Type of Event: <%= @event.type_of_event %></li>
+    <li>Creator: <%= @event.user_id %></li>
+    <li>Date Created: <%= @event.created_at %></li>
+    <li>Date Last Modified: <%= @event.updated_at %></li>
+    <li>
+      <a href="http://localhost:3000/events/<%= @event.id %>/edit">Edit</a>
+    </li>
+    <li>
+    <a href="/events/<%= @event[:id] %>"></a><%=link_to "delete this event", @event, method: :delete %></li>
+      <!-- this is grabbing from the find by id params so just its cheese.name from table-->
+  </ul>
+</body>
+</html>
 
-<% @response.each do |response| %>
-
-title: <%= response["keyword"] %>
-<br>
-city name: <%= response["location"] %>
-<%end%>
