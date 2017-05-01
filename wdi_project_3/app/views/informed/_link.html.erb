@@ -1,0 +1,8 @@
+<%= link_to link.title, link.url %>
+<%= category_from_reddit link.subreddit %><br>
+<% if @debug %>
+<hr>
+<pre>
+<%= JSON.pretty_generate(JSON.parse(link.to_json)) %>
+</pre>
+<% end %>
