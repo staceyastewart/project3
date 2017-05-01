@@ -1,9 +1,16 @@
 class InformedController < ApplicationController
+  # before_action :authenticate_user!
 
   def index
     client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
     @links = client.links(all_categories).select {|l| l.is_self != true}
-    # @debug = true
+    # @favorite_categories = ["animals", "bullying"]
+    @user = current_user
+
+
+    # if User.joins(:informed_favorites).where(:user => @user[:id])[0]
+    #   @fav_cat = User.joins(:informed_favorites).where(:id => @user.id)[0].informed_favorites
+    # end
   end
 
   def load_links
@@ -63,6 +70,7 @@ class InformedController < ApplicationController
   end
 
   def create
+    byebug
     InformedFavorite.create(
       user_id: params[:user_id],
       animals: params[:animals],
@@ -73,38 +81,41 @@ class InformedController < ApplicationController
       environment: params[:environment],
       homelessness: params[:homelessness],
       physical_health: params[:physical_health],
+      mental_health: params[:mental_health],
       poverty: params[:poverty],
       relationships: params[:relationships],
       sex: params[:sex],
       violence: params[:violence]
       )
-  end
-
-  def favorite_categories
-    client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
-      favorite_categories = []
-      if params[:animals] == true
-        favorite_categories.push('ARLAW')
-      elsif params[:bullying] == true
-        favorite_categories.push('bullying')
-      elsif params[:disasters] == true
-        favorite_categories.push('Disasters')
-      elsif params[:human_rights] == true
-        favorite_categories.push('human_rights')
-      elsif params[:education] == true
-        favorite_categories.push('education')
-      elsif params[:environment] == true
-        favorite_categories.push('enviroaction')
-      elsif params[:health] == true
-        favorite_categories.push('globalhealth')
-      elsif params[:poverty] == true
-        favorite_categories.push('poverty')
-      elsif params[:relationships] == true
-        favorite_categories.push('BetterRelationships')
-      else
-        favorite_categories = all_categories
+    # @favorite_categories = ["animals", "bullying"]
     end
   end
+
+  # def favorite_categories
+  #   client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
+  #     @favorite_categories = []
+  #     if params[:animals] == true
+  #       favorite_categories.push('ARLAW')
+  #     elsif params[:bullying] == true
+  #       favorite_categories.push('bullying')
+  #     elsif params[:disasters] == true
+  #       favorite_categories.push('Disasters')
+  #     elsif params[:human_rights] == true
+  #       favorite_categories.push('human_rights')
+  #     elsif params[:education] == true
+  #       favorite_categories.push('education')
+  #     elsif params[:environment] == true
+  #       favorite_categories.push('enviroaction')
+  #     elsif params[:health] == true
+  #       favorite_categories.push('globalhealth')
+  #     elsif params[:poverty] == true
+  #       favorite_categories.push('poverty')
+  #     elsif params[:relationships] == true
+  #       favorite_categories.push('BetterRelationships')
+  #     else
+  #       @favorite_categories = all_categories
+  #   end
+  # end
 
   def new
     favorite_categories
@@ -114,4 +125,3 @@ class InformedController < ApplicationController
 
 
 
-end

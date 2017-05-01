@@ -5,3 +5,29 @@
 
 <%= render partial: "categories" %>
 
+<%# @favorite_categories.each do |category| %>
+      <%= form_for :favorites, controller: "informed", action: "create", method:"post" do |f| %>
+        animals<%= f.check_box :animals, {}, true, false %><br>
+        bullying<%= f.check_box :bullying, {}, true, false %><br>
+        disasters<%= f.check_box :disasters, {}, true, false %><br>
+        discrimination<%= f.check_box :discrimination, {}, true, false %><br>
+        education<%= f.check_box :education, {}, true, false %><br>
+        environment<%= f.check_box :environment, {}, true, false %><br>
+        homelessness<%= f.check_box :homelessness, {}, true, false %><br>
+        physical_health<%= f.check_box :physical_health, {}, true, false %><br>
+        mental_health<%= f.check_box :mental_health, {}, true, false %><br>
+        poverty<%= f.check_box :poverty, {}, true, false %><br>
+        sex<%= f.check_box :sex, {}, true, false %><br>
+        relationships<%= f.check_box :relationships, {}, true, false %>
+
+
+        <%= f.submit %>
+      <% end %>
+
+
+
+<%# end %>
+
+
+
+

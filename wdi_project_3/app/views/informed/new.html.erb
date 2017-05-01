@@ -1,6 +1,11 @@
 <h1>Save your favorite categories</h1>
 
-<%= form_for @informed do |f| %>
+<% @favorite_categories.each do |category| %>
+
+<%= category %>
+<% end %>
+
+<%= form_for :favorite_categories, url "/informed" do |f| %>
   <%= f.label :animals %>
   <%= f.radio_button :animals %>
 
