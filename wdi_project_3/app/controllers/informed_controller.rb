@@ -18,17 +18,21 @@ class InformedController < ApplicationController
       reddit = 'bullying'
     elsif params[:id] == 'disasters'
       reddit = 'Disasters'
+    elsif params[:id] == 'environment'
+      reddit = 'enviroaction'
     elsif params[:id] == 'discrimination'
       reddit = 'human_rights'
     elsif params[:id] == 'education'
       reddit = 'education'
-    elsif params[:id] == 'environment'
-      reddit = 'enviroaction'
-    elsif params[:id] == 'health'
-      reddit = 'globalhealth'
-    elsif params[:id] == 'poverty'
+    elsif params[:id] == 'homelessness'
       reddit = 'poverty'
+    elsif params[:id] == 'mental health'
+      reddit = 'globalhealth'
+    elsif params[:id] == 'physical health'
+      reddit = 'globalhealth'
     elsif params[:id] == 'relationships'
+      reddit = 'BetterRelationships'
+    elsif params[:id] == 'sex'
       reddit = 'BetterRelationships'
     else
       reddit = 'activism'
@@ -36,16 +40,19 @@ class InformedController < ApplicationController
   end
 
   def all_categories
-    client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
+  client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
     reddit = [
      'ARLAW',
      'bullying',
      'Disasters',
+     'enviroaction',
      'human_rights',
      'education' ,
-     'enviroaction',
+     'poverty',
+     'globalhealth',
      'globalhealth',
      'poverty',
+     'BetterRelationships',
      'BetterRelationships'
      ]
      reddit.join('+')
@@ -72,6 +79,39 @@ class InformedController < ApplicationController
       violence: params[:violence]
       )
   end
+
+  def favorite_categories
+    client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
+      favorite_categories = []
+      if params[:animals] == true
+        favorite_categories.push('ARLAW')
+      elsif params[:bullying] == true
+        favorite_categories.push('bullying')
+      elsif params[:disasters] == true
+        favorite_categories.push('Disasters')
+      elsif params[:human_rights] == true
+        favorite_categories.push('human_rights')
+      elsif params[:education] == true
+        favorite_categories.push('education')
+      elsif params[:environment] == true
+        favorite_categories.push('enviroaction')
+      elsif params[:health] == true
+        favorite_categories.push('globalhealth')
+      elsif params[:poverty] == true
+        favorite_categories.push('poverty')
+      elsif params[:relationships] == true
+        favorite_categories.push('BetterRelationships')
+      else
+        favorite_categories = all_categories
+    end
+  end
+
+  def new
+    favorite_categories
+  end
+
+
+
 
 
 end

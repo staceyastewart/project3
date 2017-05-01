@@ -1,0 +1,39 @@
+<h1>Save your favorite categories</h1>
+
+<%= form_for @informed do |f| %>
+  <%= f.label :animals %>
+  <%= f.radio_button :animals %>
+
+  <%= f.label :bullying %>
+  <%= f.radio_button :bullying %>
+
+  <%= f.label :disasters %>
+  <%= f.radio_button :disasters %>
+
+  <%= f.label :education  %>
+  <%= f.radio_button :education %>
+
+  <%= f.label :homelessness %>
+  <%= f.radio_button :homelessness %>
+
+  <%= f.label :mental_health %>
+  <%= f.radio_button :mental_health %>
+
+  <%= f.label :physical_health %>
+  <%= f.radio_button :physical_health %>
+
+  <%= f.label :poverty %>
+  <%= f.radio_button :poverty %>
+
+  <%= f.label :relationships %>
+  <%= f.radio_button :relationships %>
+
+  <%= f.label :sex %>
+  <%= f.radio_button :sex %>
+
+  <%= f.label :violence %>
+  <%= f.radio_button :violence %>
+
+  <%= f.submit %>
+<% end %>
+
