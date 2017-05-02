@@ -2,17 +2,14 @@
   <div class="row">
 
 
-<% @campaigns["data"].each do |campaign| %>
+<% @causes.each do |cause| %>
 
-
-  <% if cause_events(campaign) %>
   <div class="col-sm-3">
-    <img class="card-img-top" src=<%= campaign["cover_image"]["default"]["uri"] %> alt=""><br>
+    <img class="card-img-top" src=<%= cause["cover_image"] %> alt=""><br>
     <div class="card-block">
-      <h4 class="card-title"><%= campaign["title"] %></h4>
-      <p class="card-text"><%= campaign["tagline"] %></p>
-            <% user_favorites(campaign, @saved_favs) %>
-
+      <h4 class="card-title"><%= cause["title"] %></h4>
+      <p class="card-text"><%= cause["tagline"] %></p>
+      <% user_favorites(cause, @saved_favs) %>
         <% if @fav_arr.include?("YES") %>
           <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
             <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
@@ -20,16 +17,15 @@
           <% end %>
         <% else %>
           <%= form_for :favorites, url: "/involved" do |f| %>
-            <%= hidden_field_tag :title, campaign["title"] %>
-            <%= hidden_field_tag :url, render_url(campaign)%>
-            <%= hidden_field_tag :tagline, campaign["tagline"] %>
+            <%= hidden_field_tag :title, cause["title"] %>
+            <%= hidden_field_tag :url, render_url(cause)%>
+            <%= hidden_field_tag :tagline, cause["tagline"] %>
             <%= hidden_field_tag :user_id, @user.id %>
             <%= f.submit "Favorite This Cause" %>
           <% end %>
         <% end %>
     </div>
   </div>
-    <% end %>
 
 
 <% end %>
