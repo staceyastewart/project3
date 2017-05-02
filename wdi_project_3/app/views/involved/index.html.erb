@@ -1,28 +1,23 @@
 INVOLVED PAGE
-<br>
-<br>
+<div class="page_container">
 
-
-
-<br>
-<br>
+  <div id="involved_header" class="login">
+  <h1>Get Involved</h1>
+</div>
 
 <div class="involved_sticker">
-   <img class="stupid_words"src= <%=image_path("words.png") %> width="599" height="556" alt="Words" usemap="#wordsmap">
+   <img class="inv"src= <%=image_path("kids.jpg") %> width="599" height="556" alt="Words" usemap="#wordsmap">
 </div>
-
-
-<map name="wordsmap">
-  <area shape="poly" coords="53,241,82,234,91,256,117,340,152,468,127,475" href="/involved/homelessness" target="_blank" alt="homelessness">
-  </map>
+<div class ="row category">
 
 <% @terms.each do |term| %>
-<div class ="terms">
-
+ <div class="col-sm-3 cat" >
   <a href="/involved/<%= term["name"] %>"><%= term["name"] %></a> <br>
 </div>
-
 <% end %>
+</div>
+</div>
+
 
 
 
