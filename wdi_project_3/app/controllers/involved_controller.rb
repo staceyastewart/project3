@@ -2,8 +2,8 @@ class InvolvedController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @terms = HTTParty.get("https://www.dosomething.org/api/v1/terms")
-    @campaigns = HTTParty.get("https://www.dosomething.org/api/v1/campaigns?count=250")
+    @terms = Cause.all_terms
+    @causes = Cause.all
   end
 
   def create
@@ -21,12 +21,15 @@ class InvolvedController < ApplicationController
     if User.joins(:involved_favorites).where(:id => @user[:id])[0]
       @saved_favs = User.joins(:involved_favorites).where(:id => @user[:id])[0].involved_favorites
     end
-    id = params[:id]
-    @campaigns = HTTParty.get("https://www.dosomething.org/api/v1/campaigns?count=250")
+    cause_term = params[:id]
+    @causes = Cause.where(term: cause_term)
   end
 
   def destroy
-    InvolvedFavorite.destroy(params[:delete_id])
+    involved_favorite = InvolvedFavorite.find(params[:delete_id])
+    return unless involved_favorite.user.id === current_user.id
+
+    involved_favorite.destroy
     redirect_to :back
   end
 
