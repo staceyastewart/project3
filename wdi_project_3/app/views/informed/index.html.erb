@@ -5,8 +5,8 @@
 
 <%= render partial: "categories" %>
 
-<%# @favorite_categories.each do |category| %>
-      <%= form_for :favorites, controller: "informed", action: "create", method:"post" do |f| %>
+      <%= form_for :favorites, url: "/informed"  do |f| %>
+        <%= hidden_field_tag :user_id, @user.id %>
         animals<%= f.check_box :animals, {}, true, false %><br>
         bullying<%= f.check_box :bullying, {}, true, false %><br>
         disasters<%= f.check_box :disasters, {}, true, false %><br>
@@ -26,7 +26,6 @@
 
 
 
-<%# end %>
 
 
 

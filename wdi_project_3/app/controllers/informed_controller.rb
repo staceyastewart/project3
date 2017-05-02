@@ -1,17 +1,35 @@
 class InformedController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
     @links = client.links(all_categories).select {|l| l.is_self != true}
-    # @favorite_categories = ["animals", "bullying"]
     @user = current_user
 
+    if User.joins(:informed_favorites).where(:id => @user[:id])
 
-    # if User.joins(:informed_favorites).where(:user => @user[:id])[0]
-    #   @fav_cat = User.joins(:informed_favorites).where(:id => @user.id)[0].informed_favorites
-    # end
+    end
   end
+
+    def create
+    InformedFavorite.create(
+      user_id: params[:user_id],
+      animals: params[:animals],
+      bullying: params[:bullying],
+      disasters: params[:disasters],
+      discrimination: params[:discrimination],
+      education: params[:education],
+      environment: params[:environment],
+      homelessness: params[:homelessness],
+      physical_health: params[:physical_health],
+      mental_health: params[:mental_health],
+      poverty: params[:poverty],
+      relationships: params[:relationships],
+      sex: params[:sex],
+      violence: params[:violence]
+      )
+    redirect_to :back
+    end
 
   def load_links
     client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
@@ -69,26 +87,7 @@ class InformedController < ApplicationController
     load_links
   end
 
-  def create
-    byebug
-    InformedFavorite.create(
-      user_id: params[:user_id],
-      animals: params[:animals],
-      bullying: params[:bullying],
-      disasters: params[:disasters],
-      discrimination: params[:discrimination],
-      education: params[:education],
-      environment: params[:environment],
-      homelessness: params[:homelessness],
-      physical_health: params[:physical_health],
-      mental_health: params[:mental_health],
-      poverty: params[:poverty],
-      relationships: params[:relationships],
-      sex: params[:sex],
-      violence: params[:violence]
-      )
-    # @favorite_categories = ["animals", "bullying"]
-    end
+
   end
 
   # def favorite_categories
@@ -116,10 +115,6 @@ class InformedController < ApplicationController
   #       @favorite_categories = all_categories
   #   end
   # end
-
-  def new
-    favorite_categories
-  end
 
 
 

@@ -38,7 +38,7 @@ module InformedHelper
       else
         index_of_fav += 1
       end
-      end
+    end
   end
 
 end
