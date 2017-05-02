@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   </head>
-
   <body>
 <% if user_signed_in? %>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -47,8 +46,8 @@
 
 
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<!--   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> -->
 <% end %>
 <div class="container-fluid">
     <%= yield %>
