@@ -8,11 +8,11 @@ INVOLVED PAGE
 <div class="involved_sticker">
    <img class="inv"src= <%=image_path("kids.jpg") %> width="599" height="556" alt="Words" usemap="#wordsmap">
 </div>
-<div class ="row category">
+<div class ="row category_row">
 
 <% @terms.each do |term| %>
   <div class="col-sm-3 cat" >
-    <a href="/involved/<%= term %>"><%= term.capitalize %></a> <br>
+    <a class="terms" href="/involved/<%= term %>"><%= term.capitalize %></a> <br>
   </div>
 <% end %>
 
