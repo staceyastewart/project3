@@ -9,7 +9,7 @@ gem "json"
 gem "httparty"
 gem 'devise'
 
-
+gem "ransack"
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 

@@ -3,7 +3,10 @@ class HomeController < ApplicationController
         @news = HTTParty.get("https://newsapi.org/v1/articles?source=associated-press&sortBy=top&apiKey=5045dff729e04b8f898503c8e2f22006")
     @rand_news= @news["articles"].sample
     @events = Event.all
-    @calend = Calendar.all
+    @calend = Event.all
+    if current_user
+    @fav_charity = FavoriteCharity.where(:user_id => current_user.id)
+    end
     if current_user
       @favorites = InvolvedFavorite.where(:user_id => current_user.id)
     end
@@ -11,8 +14,10 @@ class HomeController < ApplicationController
   end
 
   def show
-      @calend = Calendar.where(:user_id => current_user.id)
+    if current_user
+      @calend = Event.where(:user_id => current_user.id)
       render :json => @calend
+    end
 
   end
 

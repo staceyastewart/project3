@@ -1,20 +1,19 @@
-SHOW PAGE
+<div class="page_container">
+  <div class="row">
 
-<!-- THIS PAGE SHOULD NOT BE VIEWABLE TO ANYONE NOT LOGGED IN -->
-
-
-<br><br><br><br>
 
 <% @campaigns["data"].each do |campaign| %>
-  <% if cause_events(campaign) %>
-      <strong><%= campaign["title"] %></strong> <br>
-      <%= campaign["tagline"] %><br>
-      <a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a>
-      <br>
 
-      <% user_favorites(campaign, @saved_favs) %>
+
+  <% if cause_events(campaign) %>
+  <div class="col-sm-3">
+    <img class="card-img-top" src=<%= campaign["cover_image"]["default"]["uri"] %> alt=""><br>
+    <div class="card-block">
+      <h4 class="card-title"><%= campaign["title"] %></h4>
+      <p class="card-text"><%= campaign["tagline"] %></p>
+            <% user_favorites(campaign, @saved_favs) %>
+
         <% if @fav_arr.include?("YES") %>
-          **This is one of your favorite causes**
           <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
             <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
             <%= f.submit "Delete From Favorites" %>
@@ -28,9 +27,14 @@ SHOW PAGE
             <%= f.submit "Favorite This Cause" %>
           <% end %>
         <% end %>
+    </div>
+  </div>
+    <% end %>
 
-<br><br><br>
 
-  <% end %>
 <% end %>
+</div>
+
+<!--  -->
+</div>
 

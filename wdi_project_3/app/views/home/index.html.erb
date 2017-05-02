@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 TEST
 
 
@@ -7,38 +8,56 @@ HOME PAGE
 
 <div id="news">
 
+=======
+>>>>>>> aafa8dabe9117f7027f9d895d02ff7258e7bbebe
 <% if user_signed_in? %>
-  Welcome, <strong><%= current_user.name %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
+<div class="sticker">
+  <div class="col-md-8 center"></div>
+    <p class="hello">Welcome, <strong><%= current_user.name %></strong>.</p>
+      <img class="bg" src=<%=image_path("bg.jpg") %> alt="">
+  </div>
 <br>
+
+<div id="cal_container">
+
+<div id="calendar">
+</div>
+</div>
+<left>
+<div class="card">
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+  <p><% @favorites.each do |fav| %>
+  <%= fav["title"] %>
+  <%= fav["url"] %></p>
+<% end %>
+  </div>
+  <div class="col-xs-6 col-md-4">  <% @fav_charity.each do |fav| %>
+  <p><%= fav["name"] %>
+  <%= fav["city"] %>
+  <%= fav["url"] %></p>
+<% end %></div>
+  <div class="col-xs-6 col-md-4">  <% @fav_charity.each do |fav| %>
+ <p> <%= fav["name"] %>
+  <%= fav["city"] %>
+  <%= fav["url"] %></p>
+<% end %></div>
+</div>
+</div>
+<!--
+  <div class="col-sm-4">
 <%= @rand_news["title"] %>
 <br>
 <%= @rand_news["description"] %>
 <br>
 <%= @rand_news["url"] %>
-
-<div id="calendar">
+  </div>
 </div>
-
-<hr>
-
-Events you favorited:
-
-
-<div id="favs">
-
-<% @favorites.each do |fav| %>
-  <%= fav["title"] %>
-  <%= fav["url"] %>
-<% end %>
-</div>
-
-<br>
-<br>
-</div>
+ -->
 
 <% else %>
+<div id="login" class="login">
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <div class="homepage-hero-module">
@@ -48,12 +67,12 @@ Events you favorited:
             <source src= <%=image_path("Draw-Something/MP4/Draw-Something.mp4") %>  type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src=<%=image_path("Draw-Something/WEBM/Draw-Something.webm") %> type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
-        <div class="poster hidden">
-            <!-- <img src=<%=image_path("Draw-Something/Snapshots/Draw-Something.jpg") %> alt=""> -->
+        <!-- <div class="poster hidden"> -->
+            <!-- <img src=<%=image_path("Draw-Something/Snapshots/Draw-Something.jpg") %> alt="">
         </div>
     </div>
+<!-- </div> -->
 </div>
-
 <% end %>
 
 

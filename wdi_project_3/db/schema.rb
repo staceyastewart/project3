@@ -53,12 +53,21 @@ ActiveRecord::Schema.define(version: 20170501151715) do
   end
 
   create_table "favorite_charities", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "name"
     t.string   "city"
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+=======
+    t.string   "name",       null: false
+    t.string   "city",       null: false
+    t.string   "url",        null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> aafa8dabe9117f7027f9d895d02ff7258e7bbebe
     t.index ["user_id"], name: "index_favorite_charities_on_user_id", using: :btree
   end
 
@@ -122,6 +131,10 @@ ActiveRecord::Schema.define(version: 20170501151715) do
 
   add_foreign_key "calendars", "users"
   add_foreign_key "events", "users"
+<<<<<<< HEAD
+=======
+  add_foreign_key "favorite_charities", "users"
+>>>>>>> aafa8dabe9117f7027f9d895d02ff7258e7bbebe
   add_foreign_key "informed_favorites", "users"
   add_foreign_key "involved_favorites", "users"
 end

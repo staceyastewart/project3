@@ -1,4 +1,5 @@
 class FavoritecharitiesController < ApplicationController
+  before_filter :authenticate_user!
 
   def create
     FavoriteCharity.create(
