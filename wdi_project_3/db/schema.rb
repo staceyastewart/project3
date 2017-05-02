@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20170502200100) do
 
   add_foreign_key "calendars", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "favorite_charities", "users"
   add_foreign_key "informed_favorites", "users"
   add_foreign_key "involved_favorites", "users"
 end
