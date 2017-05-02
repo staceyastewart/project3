@@ -71,7 +71,7 @@ class InformedController < ApplicationController
   end
 
   def create
-    byebug
+    # byebug
     InformedFavorite.create(
       user_id: params[:user_id],
       animals: params[:animals],
