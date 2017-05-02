@@ -1,14 +1,17 @@
-<div id = body_show>
-<button class="go_back">Go Back</button>
-<div id = "charities">
-<ul>
-<%@response["data"].each do |charity| %>
-<div><a id='all' href = "<%=@zipCode%>/<%=charity["ein"]%>"><%= charity["charityName"] %></a></div><br>
-<%end%>
-</ul>
+<div id="all_charities">
+<p id="lista">Charity Organizations in searched area</p>
 </div>
 
+<div id = "charities">
+<%@response["data"].each do |charity| %>
+<div id="one_char"><a href = "<%=@zipCode%>/<%=charity["ein"]%>"><%= charity["charityName"] %></a></div><br>
+<%end%>
 </div>
+<div id ="tree">
+
+</div>
+
+
 
 
 

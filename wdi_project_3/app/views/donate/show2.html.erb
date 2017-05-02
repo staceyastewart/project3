@@ -1,6 +1,5 @@
-<div id = "body_show2">
-<div id= "image_tree">
-<div id = "organization">
+<div id="show_container">
+
 <% @response.each do |charity| %>
   <% if charity_show(charity) %>
   <br>
@@ -47,28 +46,12 @@
           <%= hidden_field_tag :user_id, @user.id %>
         <%= f.submit %>
   <% end %>
-
-
-
 <% end %>
 
 <!-- below will check if this record already exists for the user, if it does it will render a delete button, if it does not it will render the fav button -->
-
-
-
-
-
-
-
-
-
-  <% end %>
+<% end %>
 <%end%>
 </div>
-
-</div>
-
-<br>
-<br>
-<button class="go_back">Go Back</button>
+<div id = "hands">
+<img src="http://i.imgur.com/qgKjwJK.png?2">
 </div>
