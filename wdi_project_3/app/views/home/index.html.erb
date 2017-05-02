@@ -14,12 +14,12 @@
 </div>
 <left>
 <div class="card">
-<div class="row">
+<div id="row-fav" class="row">
   <h1> Favorites</h1>
 
   <div id="c" class="col-xs-2 col-md-2">
   <p><% @favorites.each do |fav| %>
-  <a href="<%= render_url(fav)%>"><%= fav["title"] %></a><br>
+  <a href="<%= fav["url"]%>"><%= fav["title"] %></a><br>
   <%= fav["tagline"] %>
    </p>
 <% end %>
@@ -28,7 +28,7 @@
   <div id="c" class="col-xs-2 col-md-2">
   <% @fav_charity.each do |fav| %>
 
-  <p><%= fav["url"] %></a><br>
+  <p><a href="<%= fav["url"]%>"><%= fav["name"] %></a><br>
   <%= fav["city"] %></p>
    </p>
 <% end %></div>
