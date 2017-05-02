@@ -11,7 +11,6 @@ SHOW PAGE
       <%= campaign["tagline"] %><br>
       <a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a>
       <br>
-
       <% user_favorites(campaign, @saved_favs) %>
         <% if @fav_arr.include?("YES") %>
           **This is one of your favorite causes**
@@ -28,9 +27,7 @@ SHOW PAGE
             <%= f.submit "Favorite This Cause" %>
           <% end %>
         <% end %>
-
 <br><br><br>
-
   <% end %>
 <% end %>
 
