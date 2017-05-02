@@ -11,10 +11,11 @@ INVOLVED PAGE
 <div class ="row category">
 
 <% @terms.each do |term| %>
- <div class="col-sm-3 cat" >
-  <a href="/involved/<%= term["name"] %>"><%= term["name"] %></a> <br>
-</div>
+  <div class="col-sm-3 cat" >
+    <a href="/involved/<%= term %>"><%= term.capitalize %></a> <br>
+  </div>
 <% end %>
+
 </div>
 </div>
 
