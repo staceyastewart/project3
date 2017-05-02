@@ -1,4 +1,6 @@
 class InvolvedController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     @terms = HTTParty.get("https://www.dosomething.org/api/v1/terms")
     @campaigns = HTTParty.get("https://www.dosomething.org/api/v1/campaigns?count=250")
