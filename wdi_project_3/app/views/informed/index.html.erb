@@ -1,3 +1,4 @@
+<div class="page_container">
 <h1>Top Stories</h1>
 <% @links.each do |link| %>
 <%= render partial: "link", locals: { link: link } %>
@@ -23,6 +24,7 @@
 
         <%= f.submit %>
       <% end %>
+      </div>
 
 
 
