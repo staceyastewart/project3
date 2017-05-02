@@ -28,7 +28,7 @@
   <div id="c" class="col-xs-2 col-md-2">
   <% @fav_charity.each do |fav| %>
 
-  <p><a href="<%= render_ur(fav)%>"><%= fav["name"] %></a><br>
+  <p><%= fav["url"] %></a><br>
   <%= fav["city"] %></p>
    </p>
 <% end %></div>
