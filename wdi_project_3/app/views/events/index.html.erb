@@ -9,6 +9,24 @@
   <body>
 <div id="body_index">
    <h1> Locate, Create and Share your events here. </h1>
+    <%= search_form_for @q do |f| %>
+      <div class="field">
+        <%= f.label :name_cont, "Title contains" %>
+        <%= f.text_field :title_cont %>
+        </div>
+        <div class="actions"><%= f.submit "Search" %></div>
+    <% end %>
+
+  <% @results.each do |event| %>
+          <ul>
+          <li>
+            <a href="/events/<%= event.id %>">Title: <%= event.title %></a>
+          </li>
+        </ul>
+
+  <% end %>
+
+
     <p>List of events here</p>
       <% @event.each do |x| %>
         <ul>

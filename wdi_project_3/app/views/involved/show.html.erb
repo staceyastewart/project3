@@ -4,6 +4,7 @@
 
 <% @campaigns["data"].each do |campaign| %>
 
+
   <% if cause_events(campaign) %>
   <div class="col-sm-3">
     <img class="card-img-top" src=<%= campaign["cover_image"]["default"]["uri"] %> alt=""><br>
@@ -11,6 +12,7 @@
       <h4 class="card-title"><%= campaign["title"] %></h4>
       <p class="card-text"><%= campaign["tagline"] %></p>
             <% user_favorites(campaign, @saved_favs) %>
+
         <% if @fav_arr.include?("YES") %>
           <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
             <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
@@ -28,6 +30,7 @@
     </div>
   </div>
     <% end %>
+
 
 <% end %>
 </div>
