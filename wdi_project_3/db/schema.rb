@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170502200100) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "term"
+<<<<<<< HEAD
   end
 
   create_table "charities_tables", force: :cascade do |t|
@@ -45,6 +46,8 @@ ActiveRecord::Schema.define(version: 20170502200100) do
     t.integer "user_id"
     t.index ["charities_id"], name: "index_charities_tables_on_charities_id", using: :btree
     t.index ["user_id"], name: "index_charities_tables_on_user_id", using: :btree
+=======
+>>>>>>> 845de0061d03fc7ced112008a8ba3e4b9134dc66
   end
 
   create_table "events", force: :cascade do |t|
@@ -63,12 +66,12 @@ ActiveRecord::Schema.define(version: 20170502200100) do
   end
 
   create_table "favorite_charities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "city"
-    t.string   "url"
+    t.string   "name",       null: false
+    t.string   "city",       null: false
+    t.string   "url",        null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.index ["user_id"], name: "index_favorite_charities_on_user_id", using: :btree
   end
 
@@ -100,14 +103,6 @@ ActiveRecord::Schema.define(version: 20170502200100) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_involved_favorites_on_user_id", using: :btree
-  end
-
-  create_table "my_charities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "city"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

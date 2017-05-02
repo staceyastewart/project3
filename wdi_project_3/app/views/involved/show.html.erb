@@ -7,8 +7,11 @@
   <div class="col-sm-3">
     <img class="card-img-top" src=<%= cause["cover_image"] %> alt=""><br>
     <div class="card-block">
+
       <h4 class="card-title"><%= cause["title"] %></h4>
       <p class="card-text"><%= cause["tagline"] %></p>
+      <p class="card-text"><a href="<%= render_url(cause)%>">Learn more about <%= cause["title"] %></a> </p>
+
       <% user_favorites(cause, @saved_favs) %>
         <% if @fav_arr.include?("YES") %>
           <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
