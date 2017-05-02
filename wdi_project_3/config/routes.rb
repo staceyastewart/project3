@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :home
   resources :favoritecharities
-  get"/events/search", to: "events#search", as: :events_search
+  #get "/events/search", to: "events#search", as: :events_search
   # submiting form on front end will hit this route , tell team about this
   get '/donate/:state/:zipCode', to: 'donate#show'
   get '/donate/:state/:zipCode/:ein', to: 'donate#show2'
