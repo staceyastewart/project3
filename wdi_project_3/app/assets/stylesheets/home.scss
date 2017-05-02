@@ -1,6 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  nav,
+  footer {
+    padding-left: 0;
+  }
+}
+
 .video-container {
  position: fixed;
  top: 50%;
@@ -185,3 +194,9 @@
   margin-left: 20px;
 }
 
+#c{
+    width: 370px;
+    height: 130px;
+    white-space: nowrap;
+    overflow: auto;
+}

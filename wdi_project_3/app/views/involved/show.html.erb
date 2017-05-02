@@ -11,6 +11,7 @@
     <div class="card-block">
       <h4 class="card-title"><%= campaign["title"] %></h4>
       <p class="card-text"><%= campaign["tagline"] %></p>
+      <p class="card-text"><a href="<%= render_url(campaign)%>">Learn more about <%= campaign["title"] %></a> </p>
             <% user_favorites(campaign, @saved_favs) %>
 
         <% if @fav_arr.include?("YES") %>
