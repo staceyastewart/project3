@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170501151715) do
 
   # These are extensions that must be enabled in order to support this database
@@ -31,6 +30,13 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.index ["user_id"], name: "index_calendars_on_user_id", using: :btree
   end
 
+  create_table "charities_tables", force: :cascade do |t|
+    t.integer "charities_id"
+    t.integer "user_id"
+    t.index ["charities_id"], name: "index_charities_tables_on_charities_id", using: :btree
+    t.index ["user_id"], name: "index_charities_tables_on_user_id", using: :btree
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title",         null: false
     t.date     "date",          null: false
@@ -44,6 +50,16 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "favorite_charities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_favorite_charities_on_user_id", using: :btree
   end
 
   create_table "informed_favorites", force: :cascade do |t|
@@ -65,16 +81,6 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_informed_favorites_on_user_id", using: :btree
   end
-    
-  create_table "favorite_charities", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "city",       null: false
-    t.string   "url",        null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_favorite_charities_on_user_id", using: :btree
-  end
 
   create_table "involved_favorites", force: :cascade do |t|
     t.string   "title",      null: false
@@ -84,6 +90,14 @@ ActiveRecord::Schema.define(version: 20170501151715) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_involved_favorites_on_user_id", using: :btree
+  end
+
+  create_table "my_charities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,6 +123,5 @@ ActiveRecord::Schema.define(version: 20170501151715) do
   add_foreign_key "calendars", "users"
   add_foreign_key "events", "users"
   add_foreign_key "informed_favorites", "users"
-  add_foreign_key "favorite_charities", "users"
   add_foreign_key "involved_favorites", "users"
 end
