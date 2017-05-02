@@ -1,17 +1,21 @@
-<div id="body_index">
+ <div class = "donate_index">
+     <!-- Content goes here -->
+
 <h1>DONATE</h1>
-<h2>Search for oragnizations in your area</h2> <br>
-<button class="go_back">Go Back</button>
-<br>
+   <div id=char_title>
+<h2 id="tit">Search for oragnizations in your area</h2>
+   </div>
+   </div>
+   <div class = "search_charities">
 <br>
 <form id="donation_search" action="/donate" method="POST">
-<div class="sticker">
+<!--<div class="sticker">
   <div class="col-md-8 center"></div>
     <p class="hello">Welcome, <strong><%= current_user.name %></strong>.</p>
-      <!-- <img class="bg" src=<%=image_path("bg.jpg") %> alt=""> -->
-  </div>
+       <img class="bg" src=<%=image_path("bg.jpg") %> alt="">
+  </div>-->
 
-  State: <select name="state_name">
+State: <select name="state_name" >
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
     <option value="AZ">Arizona</option>
@@ -69,9 +73,6 @@
 
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
-
-<img id="tree" src=http://i.imgur.com/abeHYUP.jpg>
-
 </div>
 
 

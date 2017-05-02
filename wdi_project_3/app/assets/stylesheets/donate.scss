@@ -1,60 +1,62 @@
 // Place all the styles related to the donate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#body_show2{
-  background-color:#DCDCDC;
-background-image: url("http://i.imgur.com/qgKjwJK.png?2");
-background-position: center;
-background-repeat: no-repeat;
-height: 1000px;
 
+.donate_index{
+height: 680px;
+background-image: url("http://i.imgur.com/YfEhp6z.jpg");
+background-size: 100%;
+background-repeat: no-repeat;
 }
-#body_show{
-background-color:#DCDCDC;
-background-image: url("http://i.imgur.com/qgKjwJK.png?2");
-background-position: center;
-background-repeat: no-repeat;
-height: 1000px;
-
+#char_title{
+height: 150px;
+width: 600px;
+text-align: center;
+margin-left: 30%;
+margin-top: 8%;
+background-color: rgba(255,255,255,0.2);
+}
+#tit{
+  padding-top: 50px;
+}
+.search_charities{
+  background-color: black;
+  height: 200px;
+}
+#donation_search{
+  text-align: center;
+  font-size: 26px;
 }
 #charities{
-  margin-top:-20px;
-  margin-left: 30%;
-  text-align: center;
-  background-color:rgba(0,191,255,0.4);
-  height: 760px;
-  width: 500px;
-  border-radius: 10px;
+  column-count:3;
+  column-gap:100px;
+  padding: 8%;
 }
 
-
-// #all{
-//   color:black;
-//   font-weight: bold;
-// }
-#organization{
-  margin-top:-20px;
-  margin-left: 14%;
+#all_charities{
+  margin-top: 100px;
+  background-image: url("http://i.imgur.com/DnitdqJ.jpg");
+  background-size: 100%;
+  height: 200px;
   text-align: center;
-  background-color:rgba(0,191,255,0.2);
-  height: 380px;
-  width: 1000px;
-  border-radius: 10px;
+
 }
-// a{
-//   color: red;
-// }
-
-// .navbar-text{
-//   padding-top: 20px;
-//   padding-left: 20px;
-//   color:white;
-//   background-color: black;
-//   height: 50px;
-
-// }
-
-
-#body_index{
+#lista{
+padding:70px;
+font-size: 36px;
+}
+#tree{
+  background-image: url("http://i.imgur.com/qgKjwJK.png?2");
+}
+#show_container{
+  position: relative;
+  margin-top: 50px;
+  background-color: rgba(0,0,0,0.2);
+  height: 400px;
+  width: 100%;
   text-align: center;
+}
+#hands{
+  text-align: center;
+  margin-top: -190px;
 }
