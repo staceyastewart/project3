@@ -8,16 +8,18 @@ module InvolvedHelper
   end
 
   def user_favorites(obj, arr)
-    index_of_fav = 0
-      arr.each do |favorite|
-        @fav_arr = []
-        if favorite[:title] == obj["title"]
-          @fav_arr = ["YES"]
-          @index_of_fav = index_of_fav
-          break
-        else
-          false
-          index_of_fav += 1
+    if arr
+      index_of_fav = 0
+        arr.each do |favorite|
+          @fav_arr = []
+          if favorite[:title] == obj["title"]
+            @fav_arr = ["YES"]
+            @index_of_fav = index_of_fav
+            break
+          else
+            false
+            index_of_fav += 1
+          end
         end
       end
   end

@@ -13,19 +13,29 @@
       <p class="card-text"><a href="<%= render_url(cause)%>">Learn more about <%= cause["title"] %></a> </p>
 
       <% user_favorites(cause, @saved_favs) %>
-        <% if @fav_arr.include?("YES") %>
-          <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
-            <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
-            <%= f.submit "Delete From Favorites" %>
+        <% if @fav_arr %>
+          <% if @fav_arr.include?("YES") %>
+            <%= form_for(:favorites, :html => {:method => 'delete'}) do |f| %>
+              <%= hidden_field_tag :delete_id, @saved_favs[@index_of_fav][:id] %>
+              <%= f.submit "Delete From Favorites" %>
+            <% end %>
+          <% else %>
+            <%= form_for :favorites, url: "/involved" do |f| %>
+              <%= hidden_field_tag :title, cause["title"] %>
+              <%= hidden_field_tag :url, render_url(cause)%>
+              <%= hidden_field_tag :tagline, cause["tagline"] %>
+              <%= hidden_field_tag :user_id, @user.id %>
+              <%= f.submit "Favorite This Cause" %>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= form_for :favorites, url: "/involved" do |f| %>
-            <%= hidden_field_tag :title, cause["title"] %>
-            <%= hidden_field_tag :url, render_url(cause)%>
-            <%= hidden_field_tag :tagline, cause["tagline"] %>
-            <%= hidden_field_tag :user_id, @user.id %>
-            <%= f.submit "Favorite This Cause" %>
-          <% end %>
+          <% else %>
+            <%= form_for :favorites, url: "/involved" do |f| %>
+              <%= hidden_field_tag :title, cause["title"] %>
+              <%= hidden_field_tag :url, render_url(cause)%>
+              <%= hidden_field_tag :tagline, cause["tagline"] %>
+              <%= hidden_field_tag :user_id, @user.id %>
+              <%= f.submit "Favorite This Cause" %>
+              <% end %>
         <% end %>
     </div>
   </div>
