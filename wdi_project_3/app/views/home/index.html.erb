@@ -55,9 +55,11 @@
 
 
 <% else %>
-<div id="login" class="login">
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<div id="login-home" class="login">
+<h1 id="home-title"> What's Goin' On? </h1>
+<h4 id="home-title"> Sign up to learn about causes you can be a part of, charities you can donate to, and find events you can attend! </h4>
+  <%= link_to "Sign up |", new_user_registration_path, :class => 'navbar-link home'  %>
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link home'  %>
 <div class="homepage-hero-module">
     <div class="video-container">
         <div class="filter"></div>
