@@ -12,7 +12,7 @@
  <div class="event-form">
 <%= form_for :events, url: "/events" do |f| %><br>
   Title: <%= text_field_tag :title %><br>
-  Date: <%= text_field_tag :date %><br>
+  Date: <%= text_field_tag :date, :class => "datepicker" %><br>
   Start Time:<%= text_field_tag :start_time %><br>
   End Time: <%= text_field_tag :end_time %><br>
   About: <%= text_field_tag :content %><br>
