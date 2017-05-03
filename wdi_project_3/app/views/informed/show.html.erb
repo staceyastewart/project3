@@ -1,8 +1,22 @@
-<h1><%= params[:id] %></h1>
-<% @links.each do |link| %>
-<%= render partial: "link", locals: { link: link } %>
-<% end %>
-<hr>
+<div class="inf_container">
+
+<header class="inform_header bg">
+    <h1>Top Stories</h1>
+</header>
+
+  <h1><%= params[:id] %></h1>
+
+<div class="articles">
+    <% @links.each do |link| %>
+
+        <div class="story">
+            <%= render partial: "link", locals: { link: link } %>
+        </div>
+
+    <% end %>
+</div>
 
 <%= render partial: "categories" %>
+
+</div>
 

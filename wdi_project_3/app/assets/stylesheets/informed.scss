@@ -1,3 +1,42 @@
 // Place all the styles related to the informed controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.inf_container {
+  margin: 100px 20px;
+}
+
+.inform_header {
+  background-image: url(luis-llerena-15502.jpg);
+  background-size: 95%;
+  margin-left: -50px;
+  // background: cover;
+  position: relative;
+
+}
+
+.overlay{
+  background: rgba(255,255,255,.7);
+  position: absolute;
+  z-index: -100;
+}
+
+h1 {
+  margin: 30px 30px;
+  padding: 0;
+  color: black;
+}
+
+.articles {
+  margin: 25px 50px;
+}
+
+.story {
+  height: 10%;
+  line-height: 20px;
+  border-top: 1px solid #e7e7e7;
+  padding: 20px 0;
+}
+
+
+
+

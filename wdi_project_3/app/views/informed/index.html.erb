@@ -1,34 +1,49 @@
-<div class="page_container">
+<div class="inf_container">
+
+<header class="inform_header bg">
+    <div class="sticker">
+
+    </div>
+</header>
+
 <h1>Top Stories</h1>
-<% @links.each do |link| %>
-<%= render partial: "link", locals: { link: link } %>
-<% end %>
 
-<%= render partial: "categories" %>
+<div class="articles">
+    <% @links.each do |link| %>
 
-<%# @favorite_categories.each do |category| %>
-      <%= form_for :favorites, controller: "informed", action: "create", method:"post" do |f| %>
-        animals<%= f.check_box :animals, {}, true, false %><br>
-        bullying<%= f.check_box :bullying, {}, true, false %><br>
-        disasters<%= f.check_box :disasters, {}, true, false %><br>
-        discrimination<%= f.check_box :discrimination, {}, true, false %><br>
-        education<%= f.check_box :education, {}, true, false %><br>
-        environment<%= f.check_box :environment, {}, true, false %><br>
-        homelessness<%= f.check_box :homelessness, {}, true, false %><br>
-        physical_health<%= f.check_box :physical_health, {}, true, false %><br>
-        mental_health<%= f.check_box :mental_health, {}, true, false %><br>
-        poverty<%= f.check_box :poverty, {}, true, false %><br>
-        sex<%= f.check_box :sex, {}, true, false %><br>
-        relationships<%= f.check_box :relationships, {}, true, false %>
+        <div class="story">
+            <%= render partial: "link", locals: { link: link } %>
+        </div>
+
+    <% end %>
+</div>
+
+<%= form_for :favorites, url: "/informed"  do |f| %>
+
+    <%= hidden_field_tag :user_id, @user.id %>
+    animals<%= f.check_box :animals, {}, true, false %><br>
+    bullying<%= f.check_box :bullying, {}, true, false %><br>
+    disasters<%= f.check_box :disasters, {}, true, false %><br>
+    discrimination<%= f.check_box :discrimination, {}, true, false %><br>
+    education<%= f.check_box :education, {}, true, false %><br>
+    environment<%= f.check_box :environment, {}, true, false %><br>
+    homelessness<%= f.check_box :homelessness, {}, true, false %><br>
+    mental_health<%= f.check_box :mental_health, {}, true, false %><br>
+    physical_health<%= f.check_box :physical_health, {}, true, false %><br>
+    poverty<%= f.check_box :poverty, {}, true, false %><br>
+    relationships<%= f.check_box :relationships, {}, true, false %><br>
+    sex<%= f.check_box :sex, {}, true, false %><br>
+    violence<%= f.check_box :violence, {}, true, false %>
+
+<%= f.submit %>
+
+    <%= render partial: "categories" %>
+  <% end %>
+
+</div>
 
 
-        <%= f.submit %>
-      <% end %>
-      </div>
 
-
-
-<%# end %>
 
 
 
