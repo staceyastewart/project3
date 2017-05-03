@@ -5,40 +5,53 @@
 
     </div>
 </header>
+  <div id="informed_header" class="login">
+  <h1 id="top-h1">Get Informed</h1>
+</div>
 
-<h1>Top Stories</h1>
+<!-- <h2>Categories</h2> -->
 
+<div class="row inf">
+  <div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Animals', informed_path('Animals'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Education', informed_path('Education'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Physical Health', informed_path('Physical Health'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Violence', informed_path('Violence'), :class=> "inf-link"  %></p><br>
+</div>
+
+  <div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Bullying', informed_path('Bullying'),  :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Environment', informed_path('Environment'),  :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Poverty', informed_path('Poverty'),  :class=> "inf-link"  %></p><br>
+
+</div>
+
+<div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Discrimination', informed_path('Discrimination'),  :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Mental Health', informed_path('Mental Health'),  :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Sex', informed_path('Sex'), :class=> "inf-link"  %></p><br>
+</div>
+<div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Disasters', informed_path('Disasters'),  :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Homelessness', informed_path('Homelessness'),  :class=> "inf-link" %></p><br>
+<p class="inf-link"><%= link_to 'Relationships', informed_path('Relationships'), :class=> "inf-link" %></p><br>
+</div>
+</div>
+
+
+<!-- <a href="/informed">Back to Top Stories</a> -->
 <div class="articles">
+<h1>Top Stories</h1>
     <% @links.each do |link| %>
 
         <div class="story">
-            <%= render partial: "link", locals: { link: link } %>
+            <p ><%= render partial: "link", locals: { link: link } %></p>
         </div>
 
-    <% end %>
+    <% end %></p>
+</div>
 </div>
 
-<%= form_for :favorites, url: "/informed"  do |f| %>
-
-    <%= hidden_field_tag :user_id, @user.id %>
-    animals<%= f.check_box :animals, {}, true, false %><br>
-    bullying<%= f.check_box :bullying, {}, true, false %><br>
-    disasters<%= f.check_box :disasters, {}, true, false %><br>
-    discrimination<%= f.check_box :discrimination, {}, true, false %><br>
-    education<%= f.check_box :education, {}, true, false %><br>
-    environment<%= f.check_box :environment, {}, true, false %><br>
-    homelessness<%= f.check_box :homelessness, {}, true, false %><br>
-    mental_health<%= f.check_box :mental_health, {}, true, false %><br>
-    physical_health<%= f.check_box :physical_health, {}, true, false %><br>
-    poverty<%= f.check_box :poverty, {}, true, false %><br>
-    relationships<%= f.check_box :relationships, {}, true, false %><br>
-    sex<%= f.check_box :sex, {}, true, false %><br>
-    violence<%= f.check_box :violence, {}, true, false %>
-
-<%= f.submit %>
-
-    <%= render partial: "categories" %>
-  <% end %>
 
 </div>
 
