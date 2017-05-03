@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.inform_header {
+  background-image: url(luis-llerena-15502.jpg);
+  background-size: 70%;
+  margin-left: -50px;
+  // background: cover;
+  position: relative;
+  z-index: -100;
+}
+
 .page_container {
   margin: 100px 20px;
 }
