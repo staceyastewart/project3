@@ -111,6 +111,28 @@ class InformedController < ApplicationController
 
 end
 
+#   def create
+#     # byebug
+#     InformedFavorite.create(
+#       user_id: params[:user_id],
+#       animals: params[:animals],
+#       bullying: params[:bullying],
+#       disasters: params[:disasters],
+#       discrimination: params[:discrimination],
+#       education: params[:education],
+#       environment: params[:environment],
+#       homelessness: params[:homelessness],
+#       physical_health: params[:physical_health],
+#       mental_health: params[:mental_health],
+#       poverty: params[:poverty],
+#       relationships: params[:relationships],
+#       sex: params[:sex],
+#       violence: params[:violence]
+#       )
+#     # @favorite_categories = ["animals", "bullying"]
+#     end
+#   end
+
   # def favorite_categories
   #   client = RedditKit::Client.new('project_active', 'Th1sisn3w86FKA')
   #     @favorite_categories = []
