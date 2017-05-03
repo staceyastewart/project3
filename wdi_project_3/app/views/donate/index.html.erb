@@ -1,13 +1,21 @@
  <div class = "donate_index">
      <!-- Content goes here -->
 
-<h1>DONATE</h1>
-   <div id=char_title>
-<h2 id="tit">Search for organizations in your area</h2>
-   </div>
+<!-- <h1>DONATE</h1> -->
+<div class="donate_sticker">
+   <img class="inv"src= <%=image_path("donate_image.jpg") %> width="599" height="556" alt="Words" usemap="#wordsmap">
+</div>
+
+<div class ="row category_row">
+
+
+<div id="char_title" class="login">
+    <h2 id="donate_title">Donate</h2>
+</div>
    </div>
    <div class = "search_charities">
 <br>
+
 <form id="donation_search" action="/donate" method="POST">
 
 <!--<div class="sticker">
@@ -15,6 +23,10 @@
     <p class="hello">Welcome, <strong><%= current_user.name %></strong>.</p>
        <img class="bg" src=<%=image_path("bg.jpg") %> alt="">
   </div>-->
+
+<div>
+    <h1 class="search_title">Search for charities in your area:</h1>
+</div>
 
 
 State: <select name="state_name" >

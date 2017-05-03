@@ -21,8 +21,8 @@ class InvolvedController < ApplicationController
     if User.joins(:involved_favorites).where(:id => @user[:id])[0]
       @saved_favs = User.joins(:involved_favorites).where(:id => @user[:id])[0].involved_favorites
     end
-    cause_term = params[:id]
-    @causes = Cause.where(term: cause_term)
+    @cause_term = params[:id]
+    @causes = Cause.where(term: @cause_term)
   end
 
   def destroy
