@@ -29,7 +29,7 @@ background-repeat: no-repeat;
     left: 24%;
     font-size: 1.2rem;
     text-align: center;
-    margin-top: -347px;
+    margin-top: -435px;
 }
 
 #donate_title{
@@ -104,10 +104,12 @@ font-size: 36px;
 
 .search_title{
   margin-bottom: 40px;
+  margin-top: -80px;
 }
 
 .city{
-  margin-top: 200px
+  // margin-top: 200px
+  font-size: 40px;
 }
 
 #char_title2{
@@ -126,6 +128,10 @@ font-size: 36px;
   text-align: center;
   margin-top: -235px;
 }
-donate_show2_page{
-  text-align: center;
+
+
+.text_box_donate{
+  margin-left: 132px;
+  margin-top: 200px;
+  padding-bottom: 20px;
 }
