@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :calendars
   has_many :involved_favorites
   has_many :favorite_charities
+  has_many :informed_favorites
 end

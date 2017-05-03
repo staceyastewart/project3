@@ -1,3 +1,27 @@
 // Place all the styles related to the informed controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page_container {
+  margin: 100px 20px;
+}
+
+h1 {
+  margin: 30px 30px;
+  padding: 0;
+}
+
+.articles {
+  margin: 25px 50px;
+}
+
+.story {
+  height: 70px;
+  line-height: 20px;
+  border-top: 1px solid #e7e7e7;
+  padding: 20px 0 0 0;
+}
+
+
+
+
