@@ -1,17 +1,35 @@
-<div id="body_index">
-<h1>DONATE</h1>
-<h2>Search for oragnizations in your area</h2> <br>
-<button class="go_back">Go Back</button>
+ <div class = "donate_index">
+     <!-- Content goes here -->
+
+<!-- <h1>DONATE</h1> -->
+<div class="donate_sticker">
+   <img class="inv"src= <%=image_path("donate_image.jpg") %> width="599" height="556" alt="Words" usemap="#wordsmap">
+</div>
+
+<div class ="row category_row">
+
+
+<div id="char_title" class="login">
+    <h2 id="donate_title">Donate</h2>
+</div>
+   </div>
+   <div class = "search_charities">
 <br>
-<br>
+
 <form id="donation_search" action="/donate" method="POST">
-<div class="sticker">
+
+<!--<div class="sticker">
   <div class="col-md-8 center"></div>
     <p class="hello">Welcome, <strong><%= current_user.name %></strong>.</p>
-      <!-- <img class="bg" src=<%=image_path("bg.jpg") %> alt=""> -->
-  </div>
+       <img class="bg" src=<%=image_path("bg.jpg") %> alt="">
+  </div>-->
 
-  State: <select name="state_name">
+<div>
+    <h1 class="search_title">Search for charities in your area:</h1>
+</div>
+
+
+State: <select name="state_name" >
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
     <option value="AZ">Arizona</option>
@@ -31,7 +49,7 @@
     <option value="KY">Kentucky</option>
     <option value="LA">Louisiana</option>
     <option value="ME">Maine</option>
-    <option value="MD">Mariland</option>
+    <option value="MD">Maryland</option>
     <option value="MA">Massachusetts</option>
     <option value="MI">Michigan</option>
     <option value="MN">Minnesota</option>
@@ -69,9 +87,6 @@
 
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>
-
-<img id="tree" src=http://i.imgur.com/abeHYUP.jpg>
-
 </div>
 
 

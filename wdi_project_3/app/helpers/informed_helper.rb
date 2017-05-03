@@ -1,5 +1,7 @@
 module InformedHelper
+
   def category_from_reddit(reddit)
+
     if reddit == 'ARLAW'
       'animals'
     elsif reddit == 'bullying'
@@ -21,24 +23,31 @@ module InformedHelper
     elsif reddit == 'poverty'
       'poverty'
     elsif reddit == 'BetterRelationships'
-      'sex'
-    elsif reddit == 'BetterRelationships'
       'relationships'
+    elsif reddit == 'BetterRelationships'
+      'sex'
+    elsif reddit == 'uncensorednews'
+      'violence'
     end
+
   end
 
+
   def informed_favorites(obj,arr)
+
     index_of_fav = 0
     arr.each do |fav|
       @fav_arr=[]
+
       if fav[:name] == obj["name"]
         @fav_arr = ["YES"]
         @index_of_fav = index_of_fav
         break
       else
-        index_of_fav += 1
-      end
-      end
-  end
 
+        index_of_fav += 1
+
+      end
+    end
+  end
 end

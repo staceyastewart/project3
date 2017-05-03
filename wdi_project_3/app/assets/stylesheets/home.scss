@@ -1,6 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  nav,
+  footer {
+    padding-left: 0;
+  }
+}
+
 .video-container {
  position: fixed;
  top: 50%;
@@ -14,6 +23,11 @@
  background: url('') no-repeat;
  background-size: cover;
  transition: 1s opacity;
+}
+.col-sm-3 {
+    height: 500px;
+    width: 50%;
+    margin-left: 5%;
 }
 
 .video-container video.fillWidth {
@@ -36,6 +50,40 @@
     font-size: 1.2rem;
     text-align: center;
 
+}
+
+#login-home {
+    font-size: 20px;
+    position: absolute;
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 2rem;
+    width: 45%;
+    height: 39%;
+    margin: 2rem;
+    left: 24%;
+    top: 20%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#login-signup {
+    font-size: 20px;
+    position: absolute;
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 2rem;
+    width: 45%;
+    height: 74%;
+    margin: 2rem;
+    left: 24%;
+    top: 9%;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 #involved_header{
@@ -76,6 +124,28 @@
 
 }
 
+.navbar-link.home{
+  font-size: 24px;
+  color: #ce6586
+}
+
+.container {
+    margin-top: 8%;
+    margin-bottom: 2.5%;
+}
+
+.camp-h2 {
+    margin-left: 67px;
+    margin-top: 15px;
+}
+
+.camp-h1 {
+    margin-top: 10%;
+    margin-left: 51.5%;
+    margin-bottom: -50px;
+}
+
+
 #head {
   background-color: blue;
     width: 100%;
@@ -84,8 +154,20 @@
 
 .row {
     margin-right: -15px;
-    margin-left: -15px;
-    margin-top: 260px;
+    margin-left: 70px;
+    margin-top: 10%;
+}
+
+.row .prof {
+    margin-right: -15px;
+    margin-left: 70px;
+    margin-top: -310px;
+}
+.lukerules{
+  margin-top: -50px;
+}
+.lukerulesalways{
+  margin-top: -325px;
 }
 .row1{
   width: 20%;
@@ -110,12 +192,12 @@
   background-image: cover;
   margin-left: -20px;
   margin-top: -230px;
-  height: 600px;
+  height: 775px;
 }
 .inv{
     background-image: cover;
     margin-left: -20px;
-    margin-top: 0px;
+    margin-top: -10px;
     margin-bottom: -210px;
     height: 600px;
     width: 120%;
@@ -165,8 +247,12 @@
 
 .page_container{
   margin-top: 70px;
-
 }
+
+ .page_container-inv-show{
+  margin-top: 170px;
+}
+
 
 .col-sm-3 {
     height: 500px;
@@ -176,12 +262,32 @@
 
 .cat {
   height: 70px;
-  width: 500px;
+  width: 28%;
   font-size: 32px;
   padding: 0;
+  margin-left: 5%;
 }
 
-.category {
-  margin-left: 20px;
+.category_row {
+  margin-left: 70px;
+  margin-top: 23%;
 }
 
+.terms{
+  color: #817e7e;
+  font-size: 24px;
+}
+
+#c{
+      width: 50%;
+    height: 170px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+#cause_header{
+  text-align: center;
+  margin-top: -39px;
+  margin-bottom: 75px;
+
+}

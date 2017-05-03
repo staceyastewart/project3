@@ -1,8 +1,59 @@
-<h1><%= params[:id] %></h1>
-<% @links.each do |link| %>
-<%= render partial: "link", locals: { link: link } %>
-<% end %>
-<hr>
+<div class="inf_container">
 
-<%= render partial: "categories" %>
+<header class="inform_header bg">
+    <h1>Top Stories</h1>
+</header>
+
+<div id="informed_header" class="login">
+  <h1 id="top-h1">Get Informed</h1>
+</div>
+
+<div class="row inf">
+  <div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Animals', informed_path('Animals'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Education', informed_path('Education'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Physical Health', informed_path('Physical Health'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Violence', informed_path('Violence'), :class=> "inf-link"  %></p><br>
+</div>
+
+  <div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Bullying', informed_path('Bullying'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Environment', informed_path('Environment'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Poverty', informed_path('Poverty'), :class=> "inf-link"  %></p><br>
+
+</div>
+
+<div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Discrimination', informed_path('Discrimination'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Mental Health', informed_path('Mental Health'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Sex', informed_path('Sex'), :class=> "inf-link"  %></p><br>
+</div>
+<div class="col-sm-3 inf">
+<p class="inf-link"><%= link_to 'Disasters', informed_path('Disasters'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Homelessness', informed_path('Homelessness'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><%= link_to 'Relationships', informed_path('Relationships'), :class=> "inf-link"  %></p><br>
+<p class="inf-link"><a href="/informed">Back to Top Stories</a></p><br>
+
+
+
+</div>
+</div>
+
+
+
+<div class="articles">
+
+  <h1><%= params[:id] %></h1>
+    <% @links.each do |link| %>
+
+        <div class="story">
+            <p ><%= render partial: "link", locals: { link: link } %></p>
+        </div>
+
+    <% end %>
+</div>
+
+</div>
+
+
 

@@ -76,4 +76,39 @@ img {
 
 .editEventFormShow{
  margin-top: 90px
+
+
+ .page_container-event{
+  margin-top: 20px;
+}
+
+#Event_header{
+    font-size: 20px;
+    position: absolute;
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100;
+    background: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 2rem;
+    width: 45%;
+    height: 14%;
+    margin: 2rem;
+    left: 24%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 213px;
+
+}
+
+#event-h1 {
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-bottom: -50px;
+}
+
+.event-form{
+  top: 30px;
+  margin-top: 17%;
+  margin-left: 40%;
+
 }
