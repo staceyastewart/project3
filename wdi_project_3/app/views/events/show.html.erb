@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="">
 </head>
 <body>
+<div class="editEventFormShow">
   <h1>Event</h1>
   <ul>
     <li>Title: <%= @event.title %></li>
@@ -27,6 +28,7 @@
     <a href="/events/<%= @event[:id] %>"></a><%=link_to "delete this event", @event, method: :delete %></li>
       <!-- this is grabbing from the find by id params so just its cheese.name from table-->
   </ul>
+  </div>
 </body>
 </html>
 

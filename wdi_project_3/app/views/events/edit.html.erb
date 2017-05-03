@@ -1,16 +1,27 @@
-<h1>Edit your event here:<h1>
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="editEventForm">
+        <h1 style= "margin-top: 30px">Edit your event here:</h1>
+            <%= form_for @event, :method => :PUT do |c| %>
+                Title: <%= text_field_tag :title, @event.title %><br>
+                Date: <%= text_field_tag :date, @event.date %><br>
+                Start Time: <%= text_field_tag :start_time, @event.start_time %><br>
+                End Time: <%= text_field_tag :end_time, @event.end_time %><br>
+                Content: <%= text_field_tag :content, @event.content %><br>
+                Topic: <%= text_field_tag  :topic, @event.topic %><br>
+                Price: <%= text_field_tag :price, @event.price %><br>
+                Type of Event: <%= text_field_tag :type_of_event, @event.type_of_event %><br>
+                Creator: <%= text_field_tag :user_id, @event.user_id %><br>
+                <%= c.submit %>
+            <% end %>
+    </div>
+</body>
+</html>
 
-   <%= form_for @event, :method => :PUT do |c| %>
-
-    Title: <%= text_field_tag :title, @event.title %><br>
-    Date: <%= text_field_tag :date, @event.date %><br>
-    Start Time: <%= text_field_tag :start_time, @event.start_time %><br>
-    End Time: <%= text_field_tag :end_time, @event.end_time %><br>
-    Content: <%= text_field_tag :content, @event.content %><br>
-    Topic: <%= text_field_tag  :topic, @event.topic %><br>
-    Price: <%= text_field_tag :price, @event.price %><br>
-    Type of Event: <%= text_field_tag :type_of_event, @event.type_of_event %><br>
-    Creator: <%= text_field_tag :user_id, @event.user_id %><br>
-    <%= c.submit %>
-
-<% end %>

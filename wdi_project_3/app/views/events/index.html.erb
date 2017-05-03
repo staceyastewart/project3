@@ -7,38 +7,50 @@
 
 </head>
   <body>
-<div id="body_index">
-   <h1> Locate, Create and Share your events here. </h1>
-    <%= search_form_for @q do |f| %>
-      <div class="field">
-        <%= f.label :name_cont, "Title contains" %>
-        <%= f.text_field :title_cont %>
+    <div id="body_index">
+       <h1 class="intro"> </h1>
+        <div id="allstuff">
+          <div class="writing">
+            <h2 id="welcome">Welcome To The Events Page</h2>
+            <p>Here you will be able to search for an event that peaks your interest.<br>
+            Also, if you have an event in mind, scroll down and create your own event.
+            </div>
+
+          <div class="listsearch">
+            <%= search_form_for @q do |f| %>
+              <%= f.label :name_cont, "Title Contains" %>
+              <%= f.text_field :title_cont %>
+              <%= f.submit "by keyword" %><br>
+              <%= f.submit "Search all" %><br>
+            <% end %>
+            <div class="searchresults">
+             <p> Search Results:</p>
+             <ul class="event_ul">
+            <% @results.each do |event| %>
+               <li>
+                <a href="/events/<%= event.id %>">Title: <%= event.title %></a>
+                </li>
+            <% end %>
+            </ul>
+              </div>
+          </div>
+        <div class="listevents">
+          <p>Upcoming Events:</p><br>
+            <img src=<%=image_path("Admit1.png") %>>
+              <ul class="event_ul">
+              <% @event.each do |x| %>
+                  <li>
+                    <a href="/events/<%= x['id'] %>">Title: <%= x['title'] %></a>
+                  </li>
+              <% end %>
+               </ul>
         </div>
-        <div class="actions"><%= f.submit "Search" %></div>
-    <% end %>
-
-  <% @results.each do |event| %>
-          <ul>
-          <li>
-            <a href="/events/<%= event.id %>">Title: <%= event.title %></a>
-          </li>
-        </ul>
-
-  <% end %>
-
-
-    <p>List of events here</p>
-      <% @event.each do |x| %>
-        <ul>
-          <li>
-            <a href="/events/<%= x['id'] %>">Title: <%= x['title'] %></a>
-          </li>
-        </ul>
-        <br>
-
-      <% end %>
-<h1>Create and Event:</h1>
-<a href="/events/new" title="">Create an event</a>
-</div>
+          <div class= "createEvent">
+            <h1>Create an Event:</h1>
+            <p> Click the link below to create your own event</p>
+             <a href="/events/new" title="">Create an event</a>
+          </div>
+        </div>
+      </div>
   </body>
 </html>

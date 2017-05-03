@@ -1,3 +1,79 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.intro {
+  margin-top: 100px
+}
+
+.createEvent {
+  margin-top: 50px
+}
+
+.event_ul {
+  list-style-type: none;
+  text-align: center;
+  padding-left: 0px;
+}
+
+.listsearch {
+  float: left;
+  width: 491px;
+  margin: 0 0 20px 0;
+  background-image: url(Search.png);
+  height: 347px;
+  background-repeat: no-repeat;
+  border-right: 5px solid #b2a497;
+  border-bottom: 5px solid #b2a497;
+}
+
+.searchresults{
+  float: left;
+  width: 470px;
+}
+
+.listevents{
+  width: 514px;
+  padding-left: 20px;
+  margin-left: 0px;
+  padding-left: 0px;
+  border-left-width: 0px;
+  margin-right: 99px;
+  display: inline-block;
+}
+.createEvent {
+  float: right;
+  display: inline-block;
+  clear:both;
+  margin-right: 83px;
+}
+
+#allstuff {
+  border: 5px solid #b2a497;
+}
+
+img {
+    border-right-width: 0px;
+    width: 470px;
+    padding-right: 0px;
+    margin-right: 38px;
+}
+
+.writing {
+  float: right;
+  height: 347px;
+  border-bottom: 5px solid #b2a497;
+  width: 493px;
+  clear:both;
+}
+
+#welcome{
+  padding-right: 37px;
+}
+
+.editEventForm {
+  margin-top: 60px
+}
+
+.editEventFormShow{
+ margin-top: 90px
+}
