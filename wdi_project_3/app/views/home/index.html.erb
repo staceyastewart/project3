@@ -12,30 +12,46 @@
 <div id="calendar">
 </div>
 </div>
-<left>
-<div class="card">
-<div class="row">
-  <h1> Favorites</h1>
 
-  <div id="c" class="col-xs-2 col-md-2">
-  <p><% @favorites.each do |fav| %>
-  <a href="<%= render_url(fav)%>"><%= fav["title"] %></a><br>
+
+
+
+
+    <h1 class="camp-h1">Donate</h1>
+  <h1 class="camp-h2">Favorites</h1>
+<div class="container">
+<div class="lukerules"
+  <div class="row prof">
+    <div id ="c" class="col-lg-6 col-sm-6">
+        <p><% @favorites.each do |fav| %>
+  <a href="<%= fav["url"]%>"><%= fav["title"] %></a><br>
   <%= fav["tagline"] %>
    </p>
-<% end %>
+   <% end %>
+    </div>
+
+    </div>
+  </div>
   </div>
 
-  <div id="c" class="col-xs-2 col-md-2">
-  <% @fav_charity.each do |fav| %>
 
-  <p><%= fav["url"] %></a><br>
+
+<div class="lukerulesalways">
+  <div class="row prof">
+  <div id ="c" class="col-lg-6 col-sm-6 ">
+       <% @fav_charity.each do |fav| %>
+  <p><a href="<%= fav["url"]%>"><%= fav["name"] %></a><br>
   <%= fav["city"] %></p>
    </p>
-<% end %></div>
+   <% end %>
+    </div>
 
-</div>
-</div>
-</div>
+    </div>
+  </div>
+  </div>
+
+
+
 
 
 <% else %>

@@ -1,34 +1,35 @@
-<div id="show_container">
+<div id="show_container" class="donate_show2_page">
+
+<div class="donate_sticker2">
+   <img class="inv"src= <%=image_path("donate_individual.jpg") %> width="599" height="556" alt="Words" usemap="#wordsmap">
+</div>
 
 <% @response.each do |charity| %>
   <% if charity_show(charity) %>
+
+  <div id="char_title2" class="login">
+    <h2 id="donate_title"><%= charity["charityName"] %></h2>
+</div>
   <br>
-     <h2>Charity Name:</h2> <%=charity["charityName"] %><br>
+     <!-- <h2>Charity Name:</h2> <%=charity["charityName"] %><br> -->
+    <br>
+<div class="text_box_donate">
+    <h2 class="city">City:</h2>
+    <h4> <%= charity["city"]%> </h4>
     <br>
 
-    <h2>City:</h2> <%= charity["city"]%>
-    <br>
-
-    <h2>Verify this organization's elegibility for
+    <h3>Verify this organization's elegibility for
     donations through the system, and make your
-    contribution today at:</h2> <h3><a href = "<%= charity["donationUrl"]%>"><%= charity["donationUrl"]%></a></h3>
-
-
-
-
+    contribution today at:</h3> <h4><a href = "<%= charity["donationUrl"]%>"><%= charity["donationUrl"]%></a></h4>
 
 
   <% if @fav_char %>
     <% is_fav(charity, @fav_char) %>
       <% if @favorite_arr.include?("YES") %>
-
-
           <%= form_for(:favorites, url: "/favoritecharities/#{@fav_char[@index_of_fav][:id]}", :html => {:method => 'delete'}) do |f| %>
               <%= hidden_field_tag :delete_id, @fav_char[@index_of_fav][:id] %>
               <%= f.submit "Delete From Favorites" %>
           <% end %>
-
-
       <% else %>
         <%= form_for :favorites, url: "/favoritecharities" do |f| %>
           <%= hidden_field_tag :name, charity["charityName"] %>
@@ -47,11 +48,11 @@
         <%= f.submit %>
   <% end %>
 <% end %>
+</div>
 
-<!-- below will check if this record already exists for the user, if it does it will render a delete button, if it does not it will render the fav button -->
 <% end %>
 <%end%>
 </div>
 <div id = "hands">
-<img src="http://i.imgur.com/qgKjwJK.png?2">
+<!-- <img src="http://i.imgur.com/qgKjwJK.png?2"> -->
 </div>
